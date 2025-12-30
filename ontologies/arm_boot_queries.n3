@@ -1,0 +1,51 @@
+@prefix : <http://example.org/arm-boot-fsa#> .
+@prefix fsa: <http://example.org/arm-boot-fsa#> .
+@prefix infer: <http://example.org/arm-boot-inferences#> .
+@prefix req: <http://example.org/arm-boot-requirements#> .
+@prefix proc: <http://example.org/arm-boot-process#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+
+# =============================================================================
+# ARM Boot Queries - Output interesting findings
+# =============================================================================
+
+# Query 1: All ARM64 capable models
+{ ?model a infer:ARM64Model .
+} => {
+  ?model infer:queryResult "ARM64 capable model" .
+} .
+
+# Query 2: Secure boot capable models
+{ ?model a infer:SecureBootCapable .
+} => {
+  ?model infer:queryResult "Supports secure boot" .
+} .
+
+# Query 3: All failure states reachable
+{ ?state a infer:FailureState .
+  ?state infer:hasPredecessor ?from .
+} => {
+  ?state infer:canFailFrom ?from .
+} .
+
+# Query 4: Boot path length (stages from power on)
+{ fsa:PowerOn infer:hasSuccessor ?s1 .
+  ?s1 infer:hasSuccessor ?s2 .
+  ?s2 infer:hasSuccessor ?s3 .
+  ?s3 infer:hasSuccessor ?s4 .
+  ?s4 infer:hasSuccessor ?s5 .
+  ?s5 infer:hasSuccessor ?s6 .
+  ?s6 infer:hasSuccessor ?s7 .
+  ?s7 infer:hasSuccessor fsa:BootSuccess .
+} => {
+  fsa:BootFSA infer:hasSuccessPath ( fsa:PowerOn ?s1 ?s2 ?s3 ?s4 ?s5 ?s6 ?s7 fsa:BootSuccess ) .
+} .
+
+# Query 5: All conditional transitions for a model
+{ ?t a infer:ModelSpecificTransition .
+  ?model infer:hasSpecialTransition ?t .
+} => {
+  ?model infer:requiresSpecialHandling ?t .
+} .

@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://example.org/arm-boot-grothendieck#">
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Category">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Category">
+    <rdfs:label>Category</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Category">
+    <rdfs:comment>A category consists of objects and morphisms between them</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Object">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Object">
+    <rdfs:label>Object</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Object">
+    <rdfs:comment>Elements of a category</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Morphism">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Morphism">
+    <rdfs:label>Morphism</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Morphism">
+    <rdfs:comment>Arrows between objects in a category</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Functor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Functor">
+    <rdfs:label>Functor</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Functor">
+    <rdfs:comment>Structure-preserving map between categories</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#NaturalTransformation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#NaturalTransformation">
+    <rdfs:label>Natural Transformation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#NaturalTransformation">
+    <rdfs:comment>Transformation between functors</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#UniversalProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#UniversalProperty">
+    <rdfs:label>Universal Property</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#UniversalProperty">
+    <rdfs:comment>Property that characterizes an object up to unique isomorphism</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Limit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Limit">
+    <rdfs:label>Limit</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Limit">
+    <rdfs:comment>Universal cone for diagrams</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Colimit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Colimit">
+    <rdfs:label>Colimit</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Colimit">
+    <rdfs:comment>Universal cocone for diagrams</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Topos">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Topos">
+    <rdfs:label>Topos</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Topos">
+    <rdfs:comment>Category with power objects and subobject classifier</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Sheaf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Sheaf">
+    <rdfs:label>Sheaf</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Sheaf">
+    <rdfs:comment>Local-to-global functor</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#CategoryAxiom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#CategoryAxiom">
+    <rdfs:label>Category Axiom</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#IdentityAxiom">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#CategoryAxiom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#IdentityAxiom">
+    <statement>Every object has an identity morphism</statement>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#CompositionAxiom">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#CategoryAxiom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#CompositionAxiom">
+    <statement>Morphisms compose associatively</statement>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#AssociativityAxiom">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#CategoryAxiom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#AssociativityAxiom">
+    <statement>Composition is associative</statement>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#IdentityCompositionAxiom">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#CategoryAxiom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#IdentityCompositionAxiom">
+    <statement>Identity morphisms act as units for composition</statement>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootFSACategory">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Category"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootFSACategory">
+    <rdfs:label>Bootloader Finite State Automaton Category</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootFSACategory">
+    <hasObjects rdf:resource="http://example.org/arm-boot-grothendieck#BootStateObjects"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootFSACategory">
+    <hasMorphisms rdf:resource="http://example.org/arm-boot-grothendieck#BootStateMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootFSACategory">
+    <hasComposition rdf:resource="http://example.org/arm-boot-grothendieck#StateTransitionComposition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootFSACategory">
+    <hasIdentity rdf:resource="http://example.org/arm-boot-grothendieck#StateIdentityMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootStateObjects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootStateObjects">
+    <rdfs:label>Boot State Objects</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeLoadingObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeLoadingObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateObjects"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeLoadingObject">
+    <rdfs:label>Bootcode Loading State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeLoadingObject">
+    <represents rdf:resource="http://example.org/arm-boot-grothendieck#STATE_BOOTCODE_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeExecObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeExecObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateObjects"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeExecObject">
+    <rdfs:label>Bootcode Execution State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeExecObject">
+    <represents rdf:resource="http://example.org/arm-boot-grothendieck#STATE_BOOTCODE_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfLoadingObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfLoadingObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateObjects"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfLoadingObject">
+    <rdfs:label>Start.elf Loading State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfLoadingObject">
+    <represents rdf:resource="http://example.org/arm-boot-grothendieck#STATE_STARTELF_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfExecObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfExecObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateObjects"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfExecObject">
+    <rdfs:label>Start.elf Execution State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfExecObject">
+    <represents rdf:resource="http://example.org/arm-boot-grothendieck#STATE_STARTELF_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelLoadingObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelLoadingObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateObjects"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelLoadingObject">
+    <rdfs:label>Kernel Loading State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelLoadingObject">
+    <represents rdf:resource="http://example.org/arm-boot-grothendieck#STATE_KERNEL_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelExecObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelExecObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateObjects"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelExecObject">
+    <rdfs:label>Kernel Execution State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelExecObject">
+    <represents rdf:resource="http://example.org/arm-boot-grothendieck#STATE_KERNEL_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#SuccessObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#SuccessObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateObjects"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#SuccessObject">
+    <rdfs:label>Success State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#SuccessObject">
+    <represents rdf:resource="http://example.org/arm-boot-grothendieck#STATE_SUCCESS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#FailureObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#FailureObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateObjects"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#FailureObject">
+    <rdfs:label>Failure State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#FailureObject">
+    <represents rdf:resource="http://example.org/arm-boot-grothendieck#STATE_FAILURE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootStateMorphisms">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootStateMorphisms">
+    <rdfs:label>Boot State Morphisms</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeLoadToExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeLoadToExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeLoadToExec">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#BootcodeLoadingObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeLoadToExec">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#BootcodeExecObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeLoadToExec">
+    <transitionCondition>SD card initialization successful</transitionCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeExecToStartelfLoad">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeExecToStartelfLoad">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeExecToStartelfLoad">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#BootcodeExecObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeExecToStartelfLoad">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#StartelfLoadingObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeExecToStartelfLoad">
+    <transitionCondition>Bootcode execution completes</transitionCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfLoadToExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfLoadToExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfLoadToExec">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#StartelfLoadingObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfLoadToExec">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#StartelfExecObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfLoadToExec">
+    <transitionCondition>Start.elf loaded successfully</transitionCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfExecToKernelLoad">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfExecToKernelLoad">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfExecToKernelLoad">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#StartelfExecObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfExecToKernelLoad">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#KernelLoadingObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfExecToKernelLoad">
+    <transitionCondition>Hardware initialization complete</transitionCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelLoadToExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelLoadToExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelLoadToExec">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#KernelLoadingObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelLoadToExec">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#KernelExecObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelLoadToExec">
+    <transitionCondition>Kernel and initrd loaded</transitionCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelExecToSuccess">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelExecToSuccess">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelExecToSuccess">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#KernelExecObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelExecToSuccess">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#SuccessObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelExecToSuccess">
+    <transitionCondition>Kernel handover successful</transitionCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#AnyToFailure">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#AnyToFailure">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#BootStateMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#AnyToFailure">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#BootStateObjects"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#AnyToFailure">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#FailureObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#AnyToFailure">
+    <transitionCondition>Critical error occurs</transitionCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StateIdentityMorphisms">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StateIdentityMorphisms">
+    <rdfs:label>Identity Morphisms for States</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeLoadingId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeLoadingId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#StateIdentityMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeLoadingId">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#BootcodeLoadingObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeLoadingId">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#BootcodeLoadingObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeExecId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeExecId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#StateIdentityMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeExecId">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#BootcodeExecObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootcodeExecId">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#BootcodeExecObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfLoadingId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfLoadingId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#StateIdentityMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfLoadingId">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#StartelfLoadingObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfLoadingId">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#StartelfLoadingObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfExecId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfExecId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#StateIdentityMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfExecId">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#StartelfExecObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StartelfExecId">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#StartelfExecObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelLoadingId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelLoadingId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#StateIdentityMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelLoadingId">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#KernelLoadingObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelLoadingId">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#KernelLoadingObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelExecId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelExecId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#StateIdentityMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelExecId">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#KernelExecObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#KernelExecId">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#KernelExecObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#SuccessId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#SuccessId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#StateIdentityMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#SuccessId">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#SuccessObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#SuccessId">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#SuccessObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#FailureId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Morphism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#FailureId">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#StateIdentityMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#FailureId">
+    <domain rdf:resource="http://example.org/arm-boot-grothendieck#FailureObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#FailureId">
+    <codomain rdf:resource="http://example.org/arm-boot-grothendieck#FailureObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StateTransitionComposition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#StateTransitionComposition">
+    <rdfs:label>Composition of State Transitions</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid1">
+    <rdf:first rdf:resource="http://example.org/arm-boot-grothendieck#StartelfExecToKernelLoad"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid1">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid2">
+    <rdf:first rdf:resource="http://example.org/arm-boot-grothendieck#StartelfLoadToExec"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid2">
+    <rdf:rest rdf:nodeID="genid1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid3">
+    <rdf:first rdf:resource="http://example.org/arm-boot-grothendieck#BootcodeExecToStartelfLoad"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid3">
+    <rdf:rest rdf:nodeID="genid2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid4">
+    <rdf:first rdf:resource="http://example.org/arm-boot-grothendieck#BootcodeLoadToExec"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid4">
+    <rdf:rest rdf:nodeID="genid3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootToKernelComposition">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#StateTransitionComposition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootToKernelComposition">
+    <composedOf rdf:nodeID="genid4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootToKernelComposition">
+    <result rdf:resource="http://example.org/arm-boot-grothendieck#KernelLoadToExec"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#HardwareStateCategory">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Category"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#HardwareStateCategory">
+    <rdfs:label>Hardware State Category</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootProgressTransformation">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#NaturalTransformation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootProgressTransformation">
+    <rdfs:label>Boot Progress Natural Transformation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootProgressTransformation">
+    <connectsFunctors rdf:resource="http://example.org/arm-boot-grothendieck#BootToHardwareFunctor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootProgressTransformation">
+    <connectsFunctors rdf:resource="http://example.org/arm-boot-grothendieck#BootToSoftwareFunctor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootToSoftwareFunctor">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Functor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootToSoftwareFunctor">
+    <rdfs:label>Boot Process to Software State Functor</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#InitialObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#UniversalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#InitialObject">
+    <characterizedBy>Unique morphism to every object</characterizedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#InitialObject">
+    <inCategory rdf:resource="http://example.org/arm-boot-grothendieck#BootFSACategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#InitialObject">
+    <isObject rdf:resource="http://example.org/arm-boot-grothendieck#FailureObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#TerminalObject">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#UniversalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#TerminalObject">
+    <characterizedBy>Unique morphism from every object</characterizedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#TerminalObject">
+    <inCategory rdf:resource="http://example.org/arm-boot-grothendieck#BootFSACategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#TerminalObject">
+    <isObject rdf:resource="http://example.org/arm-boot-grothendieck#SuccessObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Product">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#UniversalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Product">
+    <characterizedBy>Universal cone for products</characterizedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Equalizer">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#UniversalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Equalizer">
+    <characterizedBy>Equalizes parallel morphisms</characterizedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Coproduct">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#UniversalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#Coproduct">
+    <characterizedBy>Universal cocone for coproducts</characterizedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootStateLimit">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Limit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootStateLimit">
+    <ofDiagram rdf:resource="http://example.org/arm-boot-grothendieck#BootProcessDiagram"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootStateLimit">
+    <isObject rdf:resource="http://example.org/arm-boot-grothendieck#BootcodeLoadingObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootStateColimit">
+    <rdf:type rdf:resource="http://example.org/arm-boot-grothendieck#Colimit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootStateColimit">
+    <ofDiagram rdf:resource="http://example.org/arm-boot-grothendieck#BootProcessDiagram"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#BootStateColimit">
+    <isObject rdf:resource="http://example.org/arm-boot-grothendieck#SuccessObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#YonedaLemma">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#YonedaLemma">
+    <rdfs:label>Yoneda Lemma</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-grothendieck#YonedaLemma">
+    <statement>Functors from C to Set are determined by their action on objects</statement>
+  </rdf:Description>
+</rdf:RDF>

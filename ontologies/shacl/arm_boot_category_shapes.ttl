@@ -1,0 +1,224 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://example.org/arm-boot-grothendieck#> .
+@prefix cat: <http://example.org/arm-boot-grothendieck#> .
+@prefix shapes: <http://example.org/arm-boot-category-shapes#> .
+
+# =============================================================================
+# ARM Boot Category Theory - SHACL Validation Shapes
+# Based on Grothendieck category theory ontology
+# Generated: 2025-12-27
+# =============================================================================
+
+# =============================================================================
+# CATEGORY SHAPES
+# =============================================================================
+
+shapes:CategoryShape a sh:NodeShape ;
+    sh:targetClass cat:Category ;
+    sh:name "Category Shape" ;
+    sh:description "Validates category instances" ;
+
+    # Category should have a label
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "Category label" ;
+        sh:message "Category must have a label"
+    ] .
+
+# =============================================================================
+# OBJECT SHAPES
+# =============================================================================
+
+shapes:ObjectShape a sh:NodeShape ;
+    sh:targetClass cat:Object ;
+    sh:name "Category Object Shape" ;
+    sh:description "Validates category object instances" ;
+
+    # Object should have a label
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "Object label" ;
+        sh:severity sh:Warning ;
+        sh:message "Objects should have a label"
+    ] .
+
+# =============================================================================
+# MORPHISM SHAPES
+# =============================================================================
+
+shapes:MorphismShape a sh:NodeShape ;
+    sh:targetClass cat:Morphism ;
+    sh:name "Morphism Shape" ;
+    sh:description "Validates morphism instances" ;
+
+    # Every morphism must have a domain
+    sh:property [
+        sh:path cat:domain ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class cat:Object ;
+        sh:name "Morphism domain" ;
+        sh:message "Morphism must have exactly one domain (Object)"
+    ] ;
+
+    # Every morphism must have a codomain
+    sh:property [
+        sh:path cat:codomain ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class cat:Object ;
+        sh:name "Morphism codomain" ;
+        sh:message "Morphism must have exactly one codomain (Object)"
+    ] .
+
+# =============================================================================
+# IDENTITY MORPHISM SHAPES
+# =============================================================================
+
+shapes:IdentityMorphismShape a sh:NodeShape ;
+    sh:targetClass cat:StateIdentityMorphisms ;
+    sh:name "Identity Morphism Shape" ;
+    sh:description "Validates identity morphisms have same domain and codomain" ;
+
+    # Identity morphism: domain equals codomain
+    sh:sparql [
+        sh:message "Identity morphism {$this} must have same domain and codomain" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            PREFIX cat: <http://example.org/arm-boot-grothendieck#>
+            SELECT $this
+            WHERE {
+                $this cat:domain ?dom .
+                $this cat:codomain ?cod .
+                FILTER (?dom != ?cod)
+            }
+        """
+    ] .
+
+# =============================================================================
+# FUNCTOR SHAPES
+# =============================================================================
+
+shapes:FunctorShape a sh:NodeShape ;
+    sh:targetClass cat:Functor ;
+    sh:name "Functor Shape" ;
+    sh:description "Validates functor instances" ;
+
+    # Functor should have a label
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "Functor label" ;
+        sh:message "Functor must have a label"
+    ] ;
+
+    # Functor should have source category
+    sh:property [
+        sh:path cat:sourceCategory ;
+        sh:maxCount 1 ;
+        sh:class cat:Category ;
+        sh:name "Source category" ;
+        sh:severity sh:Warning ;
+        sh:message "Functor should have a source category"
+    ] ;
+
+    # Functor should have target category
+    sh:property [
+        sh:path cat:targetCategory ;
+        sh:maxCount 1 ;
+        sh:class cat:Category ;
+        sh:name "Target category" ;
+        sh:severity sh:Warning ;
+        sh:message "Functor should have a target category"
+    ] .
+
+# =============================================================================
+# NATURAL TRANSFORMATION SHAPES
+# =============================================================================
+
+shapes:NaturalTransformationShape a sh:NodeShape ;
+    sh:targetClass cat:NaturalTransformation ;
+    sh:name "Natural Transformation Shape" ;
+    sh:description "Validates natural transformation instances" ;
+
+    # Should have a label
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "Transformation label" ;
+        sh:message "Natural transformation must have a label"
+    ] .
+
+# =============================================================================
+# UNIVERSAL PROPERTY SHAPES
+# =============================================================================
+
+shapes:UniversalPropertyShape a sh:NodeShape ;
+    sh:targetClass cat:UniversalProperty ;
+    sh:name "Universal Property Shape" ;
+    sh:description "Validates universal property instances" ;
+
+    # Must be characterized by something
+    sh:property [
+        sh:path cat:characterizedBy ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "Characterization" ;
+        sh:message "Universal property must be characterized by something"
+    ] .
+
+# =============================================================================
+# TOPOS SHAPES
+# =============================================================================
+
+shapes:ToposShape a sh:NodeShape ;
+    sh:targetClass cat:Topos ;
+    sh:name "Topos Shape" ;
+    sh:description "Validates topos instances" ;
+
+    # Topos should have power objects
+    sh:property [
+        sh:path cat:hasPowerObjects ;
+        sh:minCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:name "Has power objects" ;
+        sh:severity sh:Warning ;
+        sh:message "Topos should specify hasPowerObjects"
+    ] ;
+
+    # Topos should have subobject classifier
+    sh:property [
+        sh:path cat:hasSubobjectClassifier ;
+        sh:minCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:name "Has subobject classifier" ;
+        sh:severity sh:Warning ;
+        sh:message "Topos should specify hasSubobjectClassifier"
+    ] .
+
+# =============================================================================
+# CATEGORY AXIOM SHAPES
+# =============================================================================
+
+shapes:CategoryAxiomShape a sh:NodeShape ;
+    sh:targetClass cat:CategoryAxiom ;
+    sh:name "Category Axiom Shape" ;
+    sh:description "Validates category axiom instances" ;
+
+    # Axiom must have a statement
+    sh:property [
+        sh:path cat:statement ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "Axiom statement" ;
+        sh:message "Category axiom must have a statement"
+    ] .

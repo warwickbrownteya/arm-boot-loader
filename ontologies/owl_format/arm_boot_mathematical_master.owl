@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://example.org/arm-boot-mathematical#">
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#MathematicalFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#MathematicalFramework">
+    <rdfs:label>Mathematical Framework</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#MathematicalFramework">
+    <rdfs:comment>Unified mathematical foundation for bootloader analysis</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootloaderMathematics">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalFramework"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootloaderMathematics">
+    <integrates rdf:resource="http://example.org/arm-boot-mathematical#TarskiModelTheory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootloaderMathematics">
+    <integrates rdf:resource="http://example.org/arm-boot-mathematical#GrothendieckCategoryTheory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootloaderMathematics">
+    <integrates rdf:resource="http://example.org/arm-boot-mathematical#KripkeModalLogic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootloaderMathematics">
+    <integrates rdf:resource="http://example.org/arm-boot-mathematical#ScottDomainTheory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TarskiModelTheory">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalFramework"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TarskiModelTheory">
+    <rdfs:label>Tarski Model Theory</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TarskiModelTheory">
+    <focus>Truth conditions and semantic interpretations</focus>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TarskiModelTheory">
+    <appliedTo rdf:resource="http://example.org/arm-boot-mathematical#BootStateSemantics"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TarskiModelTheory">
+    <ontologyFile>arm_boot_tarski_semantics.n3</ontologyFile>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateSemantics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateSemantics">
+    <rdfs:label>Boot State Semantics</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateSemantics">
+    <definesTruthConditions rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</definesTruthConditions>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateSemantics">
+    <validatesTransitions rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</validatesTransitions>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#GrothendieckCategoryTheory">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalFramework"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#GrothendieckCategoryTheory">
+    <rdfs:label>Grothendieck Category Theory</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#GrothendieckCategoryTheory">
+    <focus>Categorical structures and morphisms</focus>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#GrothendieckCategoryTheory">
+    <appliedTo rdf:resource="http://example.org/arm-boot-mathematical#BootStateCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#GrothendieckCategoryTheory">
+    <ontologyFile>arm_boot_grothendieck_category.n3</ontologyFile>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateCategory">
+    <rdfs:label>Boot State Category</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateCategory">
+    <hasObjects rdf:resource="http://example.org/arm-boot-mathematical#FSAStates"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateCategory">
+    <hasMorphisms rdf:resource="http://example.org/arm-boot-mathematical#StateTransitions"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateCategory">
+    <preservesComposition rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</preservesComposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#KripkeModalLogic">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalFramework"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#KripkeModalLogic">
+    <rdfs:label>Kripke Modal Logic</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#KripkeModalLogic">
+    <focus>Possible worlds and accessibility relations</focus>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#KripkeModalLogic">
+    <appliedTo rdf:resource="http://example.org/arm-boot-mathematical#BootModalModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#KripkeModalLogic">
+    <ontologyFile>arm_boot_kripke_semantics.n3</ontologyFile>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootModalModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootModalModel">
+    <rdfs:label>Boot Modal Logic Model</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootModalModel">
+    <hasWorlds rdf:resource="http://example.org/arm-boot-mathematical#BootStates"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootModalModel">
+    <hasAccessibility rdf:resource="http://example.org/arm-boot-mathematical#StateTransitions"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootModalModel">
+    <supportsModalOperators rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</supportsModalOperators>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ScottDomainTheory">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalFramework"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ScottDomainTheory">
+    <rdfs:label>Scott Domain Theory</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ScottDomainTheory">
+    <focus>Denotational semantics and fixed points</focus>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ScottDomainTheory">
+    <appliedTo rdf:resource="http://example.org/arm-boot-mathematical#BootStateDomain"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ScottDomainTheory">
+    <ontologyFile>arm_boot_scott_domains.n3</ontologyFile>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateDomain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateDomain">
+    <rdfs:label>Boot State Domain</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateDomain">
+    <hasPartialOrder rdf:resource="http://example.org/arm-boot-mathematical#StateProgression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateDomain">
+    <hasFixedPoint rdf:resource="http://example.org/arm-boot-mathematical#BootSuccess"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#BootStateDomain">
+    <isComplete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isComplete>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#UnifiedStateSpace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#UnifiedStateSpace">
+    <rdfs:label>Unified Mathematical State Space</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#UnifiedStateSpace">
+    <tarskiInterpretation rdf:resource="http://example.org/arm-boot-mathematical#BootStateSemantics"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#UnifiedStateSpace">
+    <categoricalStructure rdf:resource="http://example.org/arm-boot-mathematical#BootStateCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#UnifiedStateSpace">
+    <modalStructure rdf:resource="http://example.org/arm-boot-mathematical#BootModalModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#UnifiedStateSpace">
+    <domainStructure rdf:resource="http://example.org/arm-boot-mathematical#BootStateDomain"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#SignificantState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#SignificantState">
+    <rdfs:label>Significant Boot State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#SignificantState">
+    <rdfs:comment>States identified through mathematical analysis</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#CriticalStates">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#SignificantState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#CriticalStates">
+    <includes rdf:resource="http://example.org/arm-boot-mathematical#BootFailureState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#CriticalStates">
+    <includes rdf:resource="http://example.org/arm-boot-mathematical#BootSuccessState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#CriticalStates">
+    <mathematicalProperty>Fixed points in domain theory</mathematicalProperty>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#CriticalStates">
+    <modalProperty>Necessary states in modal logic</modalProperty>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionStates">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#SignificantState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionStates">
+    <includes rdf:resource="http://example.org/arm-boot-mathematical#BootcodeLoadingState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionStates">
+    <includes rdf:resource="http://example.org/arm-boot-mathematical#BootcodeExecState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionStates">
+    <includes rdf:resource="http://example.org/arm-boot-mathematical#StartelfLoadingState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionStates">
+    <includes rdf:resource="http://example.org/arm-boot-mathematical#StartelfExecState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionStates">
+    <includes rdf:resource="http://example.org/arm-boot-mathematical#KernelLoadingState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionStates">
+    <includes rdf:resource="http://example.org/arm-boot-mathematical#KernelExecState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionStates">
+    <categoricalProperty>Objects with morphisms</categoricalProperty>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionStates">
+    <semanticProperty>Truth-conditional states</semanticProperty>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionPath">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionPath">
+    <rdfs:label>State Transition Path</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid1">
+    <rdf:first rdf:resource="http://example.org/arm-boot-mathematical#BootSuccessState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid1">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid2">
+    <rdf:first rdf:resource="http://example.org/arm-boot-mathematical#KernelExecState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid2">
+    <rdf:rest rdf:nodeID="genid1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid3">
+    <rdf:first rdf:resource="http://example.org/arm-boot-mathematical#KernelLoadingState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid3">
+    <rdf:rest rdf:nodeID="genid2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid4">
+    <rdf:first rdf:resource="http://example.org/arm-boot-mathematical#StartelfExecState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid4">
+    <rdf:rest rdf:nodeID="genid3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid5">
+    <rdf:first rdf:resource="http://example.org/arm-boot-mathematical#StartelfLoadingState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid5">
+    <rdf:rest rdf:nodeID="genid4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid6">
+    <rdf:first rdf:resource="http://example.org/arm-boot-mathematical#BootcodeExecState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid6">
+    <rdf:rest rdf:nodeID="genid5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid7">
+    <rdf:first rdf:resource="http://example.org/arm-boot-mathematical#BootcodeLoadingState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid7">
+    <rdf:rest rdf:nodeID="genid6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#NormalBootPath">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#TransitionPath"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#NormalBootPath">
+    <sequence rdf:nodeID="genid7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#NormalBootPath">
+    <categoricalRepresentation>Composition of morphisms</categoricalRepresentation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#NormalBootPath">
+    <modalRepresentation>Accessibility chain</modalRepresentation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#NormalBootPath">
+    <domainRepresentation>Approximation chain</domainRepresentation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ErrorBootPath">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#TransitionPath"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ErrorBootPath">
+    <fromAnyState rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</fromAnyState>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ErrorBootPath">
+    <toState rdf:resource="http://example.org/arm-boot-mathematical#BootFailureState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ErrorBootPath">
+    <categoricalRepresentation>Universal morphism</categoricalRepresentation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ErrorBootPath">
+    <modalRepresentation>Possible error worlds</modalRepresentation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ErrorBootPath">
+    <domainRepresentation>Least element ⊥</domainRepresentation>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#MathematicalConsistency">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#MathematicalConsistency">
+    <rdfs:label>Mathematical Consistency</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TarskiCategoricalConsistency">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalConsistency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TarskiCategoricalConsistency">
+    <ensures>Semantic interpretations preserve categorical structure</ensures>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#KripkeScottConsistency">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalConsistency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#KripkeScottConsistency">
+    <ensures>Modal accessibility relations align with domain ordering</ensures>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#UnifiedConsistency">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalConsistency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#UnifiedConsistency">
+    <integratesAllFrameworks rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</integratesAllFrameworks>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#UnifiedConsistency">
+    <validates>All four mathematical approaches yield consistent results</validates>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#MathematicalRequirements">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#MathematicalRequirements">
+    <rdfs:label>Mathematically-Derived Requirements</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#StateCompletenessRequirement">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalRequirements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#StateCompletenessRequirement">
+    <derivedFrom rdf:resource="http://example.org/arm-boot-mathematical#ScottDomainTheory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#StateCompletenessRequirement">
+    <requires>All states must be reachable and well-ordered</requires>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionDeterminismRequirement">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalRequirements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionDeterminismRequirement">
+    <derivedFrom rdf:resource="http://example.org/arm-boot-mathematical#GrothendieckCategoryTheory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionDeterminismRequirement">
+    <requires>State transitions must compose deterministically</requires>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ModalCorrectnessRequirement">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalRequirements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ModalCorrectnessRequirement">
+    <derivedFrom rdf:resource="http://example.org/arm-boot-mathematical#KripkeModalLogic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ModalCorrectnessRequirement">
+    <requires>Modal properties (necessity, possibility) must hold</requires>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#SemanticConsistencyRequirement">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalRequirements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#SemanticConsistencyRequirement">
+    <derivedFrom rdf:resource="http://example.org/arm-boot-mathematical#TarskiModelTheory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#SemanticConsistencyRequirement">
+    <requires>Truth conditions must be preserved across interpretations</requires>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#FormalVerification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#FormalVerification">
+    <rdfs:label>Formal Verification Property</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ReachabilityVerification">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#FormalVerification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ReachabilityVerification">
+    <property>All significant states are reachable</property>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ReachabilityVerification">
+    <verifiedBy rdf:resource="http://example.org/arm-boot-mathematical#CategoricalMorphisms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#SafetyVerification">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#FormalVerification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#SafetyVerification">
+    <property>Error states are properly isolated</property>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#SafetyVerification">
+    <verifiedBy rdf:resource="http://example.org/arm-boot-mathematical#DomainOrdering"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#LivenessVerification">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#FormalVerification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#LivenessVerification">
+    <property>Success state is eventually reachable</property>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#LivenessVerification">
+    <verifiedBy rdf:resource="http://example.org/arm-boot-mathematical#FixedPointTheorem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#MathematicalDiscovery">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#MathematicalDiscovery">
+    <rdfs:label>Mathematical Discovery</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#StateSpaceDiscovery">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalDiscovery"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#StateSpaceDiscovery">
+    <discovered>8 significant states with partial ordering</discovered>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#StateSpaceDiscovery">
+    <method>Scott domain theory analysis</method>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionPathDiscovery">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalDiscovery"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionPathDiscovery">
+    <discovered>Normal boot path and error recovery paths</discovered>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#TransitionPathDiscovery">
+    <method>Integrated categorical and modal analysis</method>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ConsistencyDiscovery">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#MathematicalDiscovery"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ConsistencyDiscovery">
+    <discovered>All four mathematical frameworks yield consistent results</discovered>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ConsistencyDiscovery">
+    <method>Cross-framework validation</method>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ImplementationGuidance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ImplementationGuidance">
+    <rdfs:label>Implementation Guidance from Mathematics</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#StateMachineGuidance">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#ImplementationGuidance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#StateMachineGuidance">
+    <requires>FSA must respect domain ordering</requires>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#StateMachineGuidance">
+    <ensures>Mathematical convergence properties</ensures>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ErrorHandlingGuidance">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#ImplementationGuidance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ErrorHandlingGuidance">
+    <requires>Error transitions must preserve categorical structure</requires>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#ErrorHandlingGuidance">
+    <ensures>Modal possibility of recovery</ensures>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#VerificationGuidance">
+    <rdf:type rdf:resource="http://example.org/arm-boot-mathematical#ImplementationGuidance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#VerificationGuidance">
+    <requires>Formal verification using all four frameworks</requires>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-mathematical#VerificationGuidance">
+    <ensures>Complete mathematical correctness</ensures>
+  </rdf:Description>
+</rdf:RDF>

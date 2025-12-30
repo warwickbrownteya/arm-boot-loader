@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://example.org/arm-boot-kripke#">
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleWorld">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleWorld">
+    <rdfs:label>Possible World</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleWorld">
+    <rdfs:comment>A state of affairs in modal logic</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#AccessibilityRelation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#AccessibilityRelation">
+    <rdfs:label>Accessibility Relation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#AccessibilityRelation">
+    <rdfs:comment>Relation between possible worlds (R in Kripke frame)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#KripkeFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#KripkeFrame">
+    <rdfs:label>Kripke Frame</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#KripkeFrame">
+    <rdfs:comment>Pair (W, R) where W is set of worlds, R is accessibility relation</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#KripkeModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#KripkeModel">
+    <rdfs:label>Kripke Model</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#KripkeModel">
+    <rdfs:comment>Frame plus valuation function for atomic propositions</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#ModalFormula">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#ModalFormula">
+    <rdfs:label>Modal Formula</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#ModalFormula">
+    <rdfs:comment>Formula in modal logic (□, ◇ operators)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootKripkeModel">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#KripkeModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootKripkeModel">
+    <hasFrame rdf:resource="http://example.org/arm-boot-kripke#BootKripkeFrame"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootKripkeModel">
+    <hasValuation rdf:resource="http://example.org/arm-boot-kripke#BootStateValuation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootKripkeFrame">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#KripkeFrame"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootKripkeFrame">
+    <worlds rdf:resource="http://example.org/arm-boot-kripke#BootStateWorlds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootKripkeFrame">
+    <accessibilityRelation rdf:resource="http://example.org/arm-boot-kripke#BootStateTransitions"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootStateWorlds">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootStateWorlds">
+    <rdfs:label>Boot State Possible Worlds</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeLoading">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#PossibleWorld"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeLoading">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootStateWorlds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeLoading">
+    <rdfs:label>Bootcode Loading World</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeLoading">
+    <atomicProposition>SD_accessible</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeLoading">
+    <atomicProposition>bootcode_exists</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#PossibleWorld"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootStateWorlds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeExec">
+    <rdfs:label>Bootcode Execution World</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeExec">
+    <atomicProposition>bootcode_loaded</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeExec">
+    <atomicProposition>hardware_initializing</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfLoading">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#PossibleWorld"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfLoading">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootStateWorlds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfLoading">
+    <rdfs:label>Start.elf Loading World</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfLoading">
+    <atomicProposition>bootcode_executed</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfLoading">
+    <atomicProposition>startelf_accessible</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#PossibleWorld"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootStateWorlds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfExec">
+    <rdfs:label>Start.elf Execution World</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfExec">
+    <atomicProposition>startelf_loaded</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfExec">
+    <atomicProposition>videocore_ready</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelLoading">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#PossibleWorld"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelLoading">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootStateWorlds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelLoading">
+    <rdfs:label>Kernel Loading World</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelLoading">
+    <atomicProposition>startelf_executed</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelLoading">
+    <atomicProposition>kernel_accessible</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#PossibleWorld"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootStateWorlds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelExec">
+    <rdfs:label>Kernel Execution World</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelExec">
+    <atomicProposition>kernel_loaded</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelExec">
+    <atomicProposition>dtb_prepared</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_Success">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#PossibleWorld"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_Success">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootStateWorlds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_Success">
+    <rdfs:label>Success World</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_Success">
+    <atomicProposition>kernel_handover_complete</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_Success">
+    <atomicProposition>boot_successful</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_Failure">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#PossibleWorld"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_Failure">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootStateWorlds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_Failure">
+    <rdfs:label>Failure World</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_Failure">
+    <atomicProposition>critical_error_occurred</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_Failure">
+    <atomicProposition>boot_failed</atomicProposition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootStateTransitions">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#AccessibilityRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootStateTransitions">
+    <rdfs:label>Boot State Accessibility Relations</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeLoading">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_BootcodeExec"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeLoading">
+    <transitionLabel>SD_init_success</transitionLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeExec">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_StartelfLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeExec">
+    <transitionLabel>bootcode_exec_complete</transitionLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfLoading">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_StartelfExec"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfLoading">
+    <transitionLabel>startelf_load_success</transitionLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfExec">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_KernelLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfExec">
+    <transitionLabel>hardware_init_complete</transitionLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelLoading">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_KernelExec"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelLoading">
+    <transitionLabel>kernel_load_success</transitionLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelExec">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_Success"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelExec">
+    <transitionLabel>kernel_handover_success</transitionLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeLoading">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_Failure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeLoading">
+    <transitionLabel>sd_init_failure</transitionLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeExec">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_Failure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeExec">
+    <transitionLabel>bootcode_exec_error</transitionLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfLoading">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_Failure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfLoading">
+    <transitionLabel>startelf_load_failure</transitionLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfExec">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_Failure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfExec">
+    <transitionLabel>startelf_exec_error</transitionLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelLoading">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_Failure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelLoading">
+    <transitionLabel>kernel_load_failure</transitionLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelExec">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_Failure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelExec">
+    <transitionLabel>kernel_handover_failure</transitionLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeLoading">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_BootcodeLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_BootcodeExec">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_BootcodeExec"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfLoading">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_StartelfLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_StartelfExec">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_StartelfExec"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelLoading">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_KernelLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_KernelExec">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_KernelExec"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_Success">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_Success"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#World_Failure">
+    <accessibleTo rdf:resource="http://example.org/arm-boot-kripke#World_Failure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootProcessModal">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#ModalFormula"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootProcessModal">
+    <rdfs:label>Boot Process Modal Logic</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#NecessarySDAccess">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootProcessModal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#NecessarySDAccess">
+    <formula>□SD_accessible</formula>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#NecessarySDAccess">
+    <meaning>It is necessary that SD card is accessible</meaning>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#NecessarySDAccess">
+    <holdsIn rdf:resource="http://example.org/arm-boot-kripke#World_BootcodeLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#NecessaryBootSuccess">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootProcessModal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#NecessaryBootSuccess">
+    <formula>□boot_successful</formula>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#NecessaryBootSuccess">
+    <meaning>It is necessary that boot succeeds</meaning>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#NecessaryBootSuccess">
+    <holdsIn rdf:resource="http://example.org/arm-boot-kripke#World_Success"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleRecovery">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootProcessModal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleRecovery">
+    <formula>◇boot_successful</formula>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleRecovery">
+    <meaning>It is possible that boot succeeds</meaning>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleRecovery">
+    <holdsIn rdf:resource="http://example.org/arm-boot-kripke#World_Failure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleError">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootProcessModal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleError">
+    <formula>◇critical_error_occurred</formula>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleError">
+    <meaning>It is possible that a critical error occurs</meaning>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleError">
+    <holdsIn rdf:resource="http://example.org/arm-boot-kripke#BootStateWorlds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#KripkeAxiom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#KripkeAxiom">
+    <rdfs:label>Kripke Modal Axiom</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#AxiomT">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#KripkeAxiom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#AxiomT">
+    <statement>If it is necessary that φ, then φ holds</statement>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#Axiom4">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#KripkeAxiom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#Axiom4">
+    <statement>If φ is necessary, then it is necessarily necessary</statement>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#AxiomD">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#KripkeAxiom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#AxiomD">
+    <statement>If φ is necessary, then φ is possible</statement>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootModalProperties">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#BootModalProperties">
+    <rdfs:label>Boot Process Modal Properties</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#IrrevocableSuccess">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootModalProperties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#IrrevocableSuccess">
+    <property>□(boot_successful → □boot_successful)</property>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#IrrevocableSuccess">
+    <meaning>Once boot succeeds, it necessarily stays successful</meaning>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleFailure">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootModalProperties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleFailure">
+    <property>◇critical_error_occurred</property>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#PossibleFailure">
+    <meaning>Failure is always possible from any state</meaning>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#DeterministicTransitions">
+    <rdf:type rdf:resource="http://example.org/arm-boot-kripke#BootModalProperties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#DeterministicTransitions">
+    <property>□(state_transition → ◇next_state)</property>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-kripke#DeterministicTransitions">
+    <meaning>State transitions lead to possible next states</meaning>
+  </rdf:Description>
+</rdf:RDF>

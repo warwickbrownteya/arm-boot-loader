@@ -1,0 +1,41 @@
+# Hyper-Configurable Raspberry Pi Bootloader Configuration
+# This demonstrates the most flexible ARM bootloader ever created
+
+# Boot sources - can be sd, usb, or network
+bootcode_source=sd
+startelf_source=sd
+kernel_source=sd
+
+# Alternative boot options
+enable_alternative_boot=1
+enable_modular_boot=0
+enable_network_boot=1
+enable_usb_boot=0
+
+# Kernel configuration
+kernel=kernel8.img
+kernel_address=0x80000
+
+# Initrd configuration
+initramfs=initramfs
+initramfs_address=0x1000000
+
+# Hardware options
+enable_usb=0
+enable_nvme=0
+
+# Custom timeouts (in milliseconds)
+timeout_bootcode_loading=5000
+timeout_kernel_loading=10000
+
+# Network boot configuration
+network_server=192.168.1.100
+network_boot_protocol=dhcp
+network_boot_filename=kernel8.img
+network_timeout_dhcp=5000
+network_timeout_tftp=10000
+network_mac_address=B8:27:EB:00:00:01
+
+# Advanced options for future expansion
+# usb_device_id=1234:5678
+# modular_components=network,usb,security

@@ -1,0 +1,78 @@
+# Unified Makefile for Xilinx Zynq UltraScale+ Bootloader
+#
+# Uses common BSP infrastructure from ../common/
+
+CROSS_COMPILE ?= aarch64-elf-
+CC = $(CROSS_COMPILE)gcc
+AS = $(CROSS_COMPILE)as
+LD = $(CROSS_COMPILE)ld
+OBJCOPY = $(CROSS_COMPILE)objcopy
+
+# Common directory
+COMMON = ../common
+
+# Platform-specific defines
+RAM_BASE = 0x00000000
+
+# Compiler flags
+CFLAGS = -Wall -Wextra -Os -ffreestanding -nostdlib -nostartfiles
+CFLAGS += -I$(COMMON) -I.
+CFLAGS += -DRAM_BASE=$(RAM_BASE)
+ASFLAGS = -march=armv8-a
+
+LDFLAGS = -T linker.ld
+
+# Output
+TARGET = bootloader-zynq-unified.bin
+ELF = bootloader-zynq-unified.elf
+
+# Sources - platform specific
+SRC_C_BSP = main_unified.c bsp_zynq.c
+SRC_S_BSP = start.S
+
+# Sources - common
+SRC_C_COMMON = $(COMMON)/boot_common.c $(COMMON)/shell.c $(COMMON)/env.c $(COMMON)/elf.c $(COMMON)/script.c $(COMMON)/net.c $(COMMON)/storage.c
+SRC_S_COMMON = $(COMMON)/kernel_boot_arm64.S
+
+# All sources
+SRC_C = $(SRC_C_BSP) $(SRC_C_COMMON)
+SRC_S = $(SRC_S_BSP) $(SRC_S_COMMON)
+
+# Objects
+OBJ_C = $(SRC_C:.c=.o)
+OBJ_S = $(SRC_S:.S=.o)
+OBJ = $(OBJ_C) $(OBJ_S)
+
+.PHONY: all clean qemu
+
+all: $(TARGET)
+
+$(TARGET): $(ELF)
+	$(OBJCOPY) -O binary $< $@
+	@echo "Built: $(TARGET) ($$(stat -f%z $(TARGET) 2>/dev/null || stat -c%s $(TARGET)) bytes)"
+	@echo "Architecture: AArch64 (unified build)"
+
+$(ELF): $(OBJ) linker.ld
+	$(LD) $(LDFLAGS) -o $@ $(OBJ)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+%.o: %.S
+	$(AS) $(ASFLAGS) $< -o $@
+
+# Common object files
+$(COMMON)/%.o: $(COMMON)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(COMMON)/%.o: $(COMMON)/%.S
+	$(AS) $(ASFLAGS) $< -o $@
+
+clean:
+	rm -f $(OBJ) $(ELF) $(TARGET)
+	rm -f $(COMMON)/*.o
+	@echo "Cleaned build artifacts"
+
+qemu: $(ELF)
+	@echo "Running unified bootloader on QEMU xlnx-zcu102..."
+	qemu-system-aarch64 -M xlnx-zcu102 -kernel $(ELF) -nographic

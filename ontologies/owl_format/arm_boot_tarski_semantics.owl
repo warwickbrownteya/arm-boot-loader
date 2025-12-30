@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://example.org/arm-boot-tarski#">
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#TarskiModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#TarskiModel">
+    <rdfs:label>Tarski Model</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#TarskiModel">
+    <rdfs:comment>A model in Tarski's sense: domain, interpretation function, satisfaction relation</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#Domain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#Domain">
+    <rdfs:label>Domain of Discourse</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#Domain">
+    <rdfs:comment>The universe of objects in the model</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#InterpretationFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#InterpretationFunction">
+    <rdfs:label>Interpretation Function</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#InterpretationFunction">
+    <rdfs:comment>Maps symbols to elements of the domain</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#SatisfactionRelation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#SatisfactionRelation">
+    <rdfs:label>Satisfaction Relation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#SatisfactionRelation">
+    <rdfs:comment>Relates formulas to their truth values in the model</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateModel">
+    <rdf:type rdf:resource="http://example.org/arm-boot-tarski#TarskiModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateModel">
+    <hasDomain rdf:resource="http://example.org/arm-boot-tarski#BootStateDomain"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateModel">
+    <hasInterpretation rdf:resource="http://example.org/arm-boot-tarski#BootStateInterpretation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateModel">
+    <hasSatisfaction rdf:resource="http://example.org/arm-boot-tarski#BootStateSatisfaction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateDomain">
+    <rdf:type rdf:resource="http://example.org/arm-boot-tarski#Domain"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateDomain">
+    <contains rdf:resource="http://example.org/arm-boot-tarski#STATE_BOOTCODE_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateDomain">
+    <contains rdf:resource="http://example.org/arm-boot-tarski#STATE_BOOTCODE_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateDomain">
+    <contains rdf:resource="http://example.org/arm-boot-tarski#STATE_STARTELF_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateDomain">
+    <contains rdf:resource="http://example.org/arm-boot-tarski#STATE_STARTELF_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateDomain">
+    <contains rdf:resource="http://example.org/arm-boot-tarski#STATE_KERNEL_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateDomain">
+    <contains rdf:resource="http://example.org/arm-boot-tarski#STATE_KERNEL_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateDomain">
+    <contains rdf:resource="http://example.org/arm-boot-tarski#STATE_SUCCESS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateDomain">
+    <contains rdf:resource="http://example.org/arm-boot-tarski#STATE_FAILURE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_BOOTCODE_LOADING">
+    <semanticValue>Initial state: preparing to load bootcode</semanticValue>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_BOOTCODE_LOADING">
+    <truthCondition>SD card accessible and bootcode file exists</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_BOOTCODE_EXEC">
+    <semanticValue>Executing bootcode: initializing hardware</semanticValue>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_BOOTCODE_EXEC">
+    <truthCondition>Bootcode loaded successfully and execution begins</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_STARTELF_LOADING">
+    <semanticValue>Loading start.elf: VideoCore firmware</semanticValue>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_STARTELF_LOADING">
+    <truthCondition>Bootcode execution completed successfully</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_STARTELF_EXEC">
+    <semanticValue>Executing start.elf: hardware initialization</semanticValue>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_STARTELF_EXEC">
+    <truthCondition>Start.elf loaded and ready for execution</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_KERNEL_LOADING">
+    <semanticValue>Loading Linux kernel image</semanticValue>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_KERNEL_LOADING">
+    <truthCondition>Start.elf execution completed and kernel file accessible</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_KERNEL_EXEC">
+    <semanticValue>Executing kernel: handover to OS</semanticValue>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_KERNEL_EXEC">
+    <truthCondition>Kernel loaded and device tree prepared</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_SUCCESS">
+    <semanticValue>Boot process completed successfully</semanticValue>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_SUCCESS">
+    <truthCondition>Kernel handover successful</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_FAILURE">
+    <semanticValue>Boot process failed</semanticValue>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#STATE_FAILURE">
+    <truthCondition>Any critical error occurred during boot sequence</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#TransitionTruth">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#TransitionTruth">
+    <rdfs:label>Transition Truth Condition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootcodeLoadToExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-tarski#TransitionTruth"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootcodeLoadToExec">
+    <fromState rdf:resource="http://example.org/arm-boot-tarski#STATE_BOOTCODE_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootcodeLoadToExec">
+    <toState rdf:resource="http://example.org/arm-boot-tarski#STATE_BOOTCODE_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootcodeLoadToExec">
+    <truthCondition>SD initialization successful</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootcodeExecToStartelfLoad">
+    <rdf:type rdf:resource="http://example.org/arm-boot-tarski#TransitionTruth"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootcodeExecToStartelfLoad">
+    <fromState rdf:resource="http://example.org/arm-boot-tarski#STATE_BOOTCODE_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootcodeExecToStartelfLoad">
+    <toState rdf:resource="http://example.org/arm-boot-tarski#STATE_STARTELF_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootcodeExecToStartelfLoad">
+    <truthCondition>Bootcode execution completes without error</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#StartelfLoadToExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-tarski#TransitionTruth"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#StartelfLoadToExec">
+    <fromState rdf:resource="http://example.org/arm-boot-tarski#STATE_STARTELF_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#StartelfLoadToExec">
+    <toState rdf:resource="http://example.org/arm-boot-tarski#STATE_STARTELF_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#StartelfLoadToExec">
+    <truthCondition>Start.elf file loaded successfully</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#StartelfExecToKernelLoad">
+    <rdf:type rdf:resource="http://example.org/arm-boot-tarski#TransitionTruth"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#StartelfExecToKernelLoad">
+    <fromState rdf:resource="http://example.org/arm-boot-tarski#STATE_STARTELF_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#StartelfExecToKernelLoad">
+    <toState rdf:resource="http://example.org/arm-boot-tarski#STATE_KERNEL_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#StartelfExecToKernelLoad">
+    <truthCondition>Start.elf execution completes hardware initialization</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#KernelLoadToExec">
+    <rdf:type rdf:resource="http://example.org/arm-boot-tarski#TransitionTruth"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#KernelLoadToExec">
+    <fromState rdf:resource="http://example.org/arm-boot-tarski#STATE_KERNEL_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#KernelLoadToExec">
+    <toState rdf:resource="http://example.org/arm-boot-tarski#STATE_KERNEL_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#KernelLoadToExec">
+    <truthCondition>Kernel image and initrd loaded successfully</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#KernelExecToSuccess">
+    <rdf:type rdf:resource="http://example.org/arm-boot-tarski#TransitionTruth"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#KernelExecToSuccess">
+    <fromState rdf:resource="http://example.org/arm-boot-tarski#STATE_KERNEL_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#KernelExecToSuccess">
+    <toState rdf:resource="http://example.org/arm-boot-tarski#STATE_SUCCESS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#KernelExecToSuccess">
+    <truthCondition>Kernel handover completes successfully</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#AnyToFailure">
+    <rdf:type rdf:resource="http://example.org/arm-boot-tarski#TransitionTruth"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#AnyToFailure">
+    <fromState rdf:resource="http://example.org/arm-boot-tarski#BootStateDomain"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#AnyToFailure">
+    <toState rdf:resource="http://example.org/arm-boot-tarski#STATE_FAILURE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#AnyToFailure">
+    <truthCondition>Critical error occurs (SD failure, file not found, etc.)</truthCondition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateSatisfaction">
+    <rdf:type rdf:resource="http://example.org/arm-boot-tarski#SatisfactionRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#BootStateSatisfaction">
+    <satisfies rdf:resource="http://example.org/arm-boot-tarski#TransitionTruth"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#SemanticConsistency">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#SemanticConsistency">
+    <rdfs:label>Semantic Consistency</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#StateTransitionConsistency">
+    <rdf:type rdf:resource="http://example.org/arm-boot-tarski#SemanticConsistency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#StateTransitionConsistency">
+    <ensures>Each state transition preserves semantic meaning</ensures>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#StateTransitionConsistency">
+    <validates>Truth conditions are maintained across state changes</validates>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#ErrorHandlingConsistency">
+    <rdf:type rdf:resource="http://example.org/arm-boot-tarski#SemanticConsistency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#ErrorHandlingConsistency">
+    <ensures>Error states have well-defined truth conditions</ensures>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-tarski#ErrorHandlingConsistency">
+    <validates>Failure modes are semantically distinguishable</validates>
+  </rdf:Description>
+</rdf:RDF>

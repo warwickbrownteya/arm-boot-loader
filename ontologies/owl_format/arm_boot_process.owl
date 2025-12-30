@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://example.org/arm-boot-process#">
+  <rdf:Description rdf:about="http://example.org/arm-boot-process">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process">
+    <rdfs:label>ARM Boot Process Ontology</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#BootProcess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#BootProcess">
+    <rdfs:label>Boot Process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#BootProcess">
+    <rdfs:comment>The overall process of booting an ARM device</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#BootStage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#BootStage">
+    <rdfs:label>Boot Stage</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#BootStage">
+    <rdfs:comment>Individual stages in the boot process</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#FirmwareComponent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#FirmwareComponent">
+    <rdfs:label>Firmware Component</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#FirmwareComponent">
+    <rdfs:comment>Components like ROM, bootcode.bin, start.elf</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Kernel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Kernel">
+    <rdfs:label>Kernel</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Kernel">
+    <rdfs:comment>The operating system kernel</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#hasStage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#hasStage">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-process#BootProcess"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#hasStage">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#hasStage">
+    <rdfs:label>has Stage</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#nextStage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#nextStage">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#nextStage">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#nextStage">
+    <rdfs:label>next Stage</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#loads">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#loads">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#loads">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-process#FirmwareComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#loads">
+    <rdfs:label>loads</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#initializes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#initializes">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#initializes">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#initializes">
+    <rdfs:label>initializes</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4BootProcess">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#BootProcess"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4BootProcess">
+    <hasStage rdf:resource="http://example.org/arm-boot-process#Pi4Stage1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4BootProcess">
+    <hasStage rdf:resource="http://example.org/arm-boot-process#Pi4Stage2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4BootProcess">
+    <hasStage rdf:resource="http://example.org/arm-boot-process#Pi4Stage3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4BootProcess">
+    <hasStage rdf:resource="http://example.org/arm-boot-process#Pi4Stage4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage1">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage1">
+    <rdfs:label>ROM Boot</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage1">
+    <loads rdf:resource="http://example.org/arm-boot-process#BootcodeBin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage1">
+    <nextStage rdf:resource="http://example.org/arm-boot-process#Pi4Stage2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage2">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage2">
+    <rdfs:label>Bootcode.bin Execution</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage2">
+    <loads rdf:resource="http://example.org/arm-boot-process#StartElf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage2">
+    <nextStage rdf:resource="http://example.org/arm-boot-process#Pi4Stage3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage3">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage3">
+    <rdfs:label>Start.elf Execution</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage3">
+    <loads rdf:resource="http://example.org/arm-boot-process#KernelImg"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage3">
+    <nextStage rdf:resource="http://example.org/arm-boot-process#Pi4Stage4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage4">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi4Stage4">
+    <rdfs:label>Kernel Boot</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#BootcodeBin">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#FirmwareComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#BootcodeBin">
+    <rdfs:label>bootcode.bin</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#StartElf">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#FirmwareComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#StartElf">
+    <rdfs:label>start.elf</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#KernelImg">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#Kernel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#KernelImg">
+    <rdfs:label>kernel.img</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5BootProcess">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#BootProcess"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5BootProcess">
+    <hasStage rdf:resource="http://example.org/arm-boot-process#Pi5Stage1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5BootProcess">
+    <hasStage rdf:resource="http://example.org/arm-boot-process#Pi5Stage2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5BootProcess">
+    <hasStage rdf:resource="http://example.org/arm-boot-process#Pi5Stage3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5BootProcess">
+    <hasStage rdf:resource="http://example.org/arm-boot-process#Pi5Stage4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage1">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage1">
+    <rdfs:label>ROM Boot</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage1">
+    <loads rdf:resource="http://example.org/arm-boot-process#BootcodeBin5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage1">
+    <nextStage rdf:resource="http://example.org/arm-boot-process#Pi5Stage2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage2">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage2">
+    <rdfs:label>Bootcode.bin Execution</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage2">
+    <loads rdf:resource="http://example.org/arm-boot-process#StartElf5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage2">
+    <nextStage rdf:resource="http://example.org/arm-boot-process#Pi5Stage3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage3">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage3">
+    <rdfs:label>Start.elf Execution</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage3">
+    <loads rdf:resource="http://example.org/arm-boot-process#Kernel8Img"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage3">
+    <nextStage rdf:resource="http://example.org/arm-boot-process#Pi5Stage4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage4">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#BootStage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Pi5Stage4">
+    <rdfs:label>Kernel Boot</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#BootcodeBin5">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#FirmwareComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#BootcodeBin5">
+    <rdfs:label>bootcode.bin (Pi 5)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#StartElf5">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#FirmwareComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#StartElf5">
+    <rdfs:label>start.elf (Pi 5)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Kernel8Img">
+    <rdf:type rdf:resource="http://example.org/arm-boot-process#Kernel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-process#Kernel8Img">
+    <rdfs:label>kernel8.img</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>
