@@ -1,0 +1,514 @@
+# QEMU Test Specification Ontology
+# Formal specification of QEMU emulation target requirements
+# Format: Notation3 (N3)
+# Date: 2025-10-19
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qemu: <http://bootloader.example.org/ontology/qemu#> .
+@prefix hw: <http://bootloader.example.org/ontology/hardware#> .
+@prefix boot: <http://bootloader.example.org/ontology/boot#> .
+@prefix test: <http://bootloader.example.org/ontology/test#> .
+
+# ==============================================================================
+# QEMU Platform Taxonomy
+# ==============================================================================
+
+qemu:Platform a owl:Class ;
+    rdfs:label "QEMU Emulation Platform" ;
+    rdfs:comment "A QEMU machine type for emulation testing" .
+
+qemu:RaspberryPiPlatform a owl:Class ;
+    rdfs:subClassOf qemu:Platform ;
+    rdfs:label "Raspberry Pi Emulation Platform" ;
+    rdfs:comment "QEMU machine emulating Raspberry Pi hardware" .
+
+qemu:VirtualPlatform a owl:Class ;
+    rdfs:subClassOf qemu:Platform ;
+    rdfs:label "QEMU Virtual Platform" ;
+    rdfs:comment "Generic ARM virtual machine" .
+
+# ==============================================================================
+# QEMU Machine Instance Definitions
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# virt - QEMU ARM Virtual Machine
+# ------------------------------------------------------------------------------
+
+qemu:virt a qemu:VirtualPlatform ;
+    qemu:machineType "virt" ;
+    qemu:cpuArchitecture "ARMv8-A" ;
+    qemu:defaultCPU "cortex-a57" ;
+    qemu:supportedCPU "cortex-a53", "cortex-a57", "cortex-a72" ;
+    qemu:defaultMemory "128M"^^xsd:string ;
+    qemu:maxMemory "8G"^^xsd:string ;
+    qemu:bootMethod qemu:DirectKernelBoot ;
+    qemu:requiresGPUFirmware false ;
+    qemu:uartAddress "0x09000000"^^xsd:hexBinary ;
+    qemu:uartType "PL011" ;
+    qemu:gicAddress "0x08000000"^^xsd:hexBinary ;
+    qemu:gpioAddress "0x09030000"^^xsd:hexBinary ;
+    qemu:timerType "System Register" ;
+    qemu:hasMailbox false ;
+    qemu:testPriority 1 ;
+    qemu:testStatus qemu:Verified ;
+    qemu:notes "Direct kernel boot, no firmware required. WORKING." .
+
+# ------------------------------------------------------------------------------
+# raspi0 - Raspberry Pi Zero
+# ------------------------------------------------------------------------------
+
+qemu:raspi0 a qemu:RaspberryPiPlatform ;
+    qemu:machineType "raspi0" ;
+    qemu:modelName "Raspberry Pi Zero" ;
+    qemu:revision "1.2" ;
+    qemu:soc hw:BCM2835 ;
+    qemu:cpuArchitecture "ARMv6" ;
+    qemu:cpu "ARM1176JZF-S" ;
+    qemu:cpuCores 1 ;
+    qemu:is64Bit false ;  # 32-bit ARM, but can run 64-bit with firmware
+    qemu:memory "512M"^^xsd:string ;
+    qemu:bootMethod qemu:GPUFirmwareBoot ;
+    qemu:requiresGPUFirmware true ;
+    qemu:requiredFirmware "bootcode.bin", "start.elf", "fixup.dat" ;
+    qemu:peripheralBase "0x20000000"^^xsd:hexBinary ;
+    qemu:uartAddress "0x20201000"^^xsd:hexBinary ;
+    qemu:gpioAddress "0x20200000"^^xsd:hexBinary ;
+    qemu:timerAddress "0x20003000"^^xsd:hexBinary ;
+    qemu:mailboxAddress "0x2000B880"^^xsd:hexBinary ;
+    qemu:emmcAddress "0x20300000"^^xsd:hexBinary ;
+    qemu:testPriority 3 ;
+    qemu:testStatus qemu:Untested ;
+    qemu:compatibilityWithCurrentBootloader qemu:Incompatible ;
+    qemu:incompatibilityReason "Wrong peripheral addresses (expects 0x3F..., needs 0x20...)" ;
+    qemu:notes "Requires BCM2835 address detection. 32-bit ARM." .
+
+# ------------------------------------------------------------------------------
+# raspi1ap - Raspberry Pi A+
+# ------------------------------------------------------------------------------
+
+qemu:raspi1ap a qemu:RaspberryPiPlatform ;
+    qemu:machineType "raspi1ap" ;
+    qemu:modelName "Raspberry Pi A+" ;
+    qemu:revision "1.1" ;
+    qemu:soc hw:BCM2835 ;
+    qemu:cpuArchitecture "ARMv6" ;
+    qemu:cpu "ARM1176JZF-S" ;
+    qemu:cpuCores 1 ;
+    qemu:is64Bit false ;
+    qemu:memory "512M"^^xsd:string ;
+    qemu:bootMethod qemu:GPUFirmwareBoot ;
+    qemu:requiresGPUFirmware true ;
+    qemu:requiredFirmware "bootcode.bin", "start.elf", "fixup.dat" ;
+    qemu:peripheralBase "0x20000000"^^xsd:hexBinary ;
+    qemu:uartAddress "0x20201000"^^xsd:hexBinary ;
+    qemu:gpioAddress "0x20200000"^^xsd:hexBinary ;
+    qemu:timerAddress "0x20003000"^^xsd:hexBinary ;
+    qemu:mailboxAddress "0x2000B880"^^xsd:hexBinary ;
+    qemu:emmcAddress "0x20300000"^^xsd:hexBinary ;
+    qemu:testPriority 4 ;
+    qemu:testStatus qemu:Untested ;
+    qemu:compatibilityWithCurrentBootloader qemu:Incompatible ;
+    qemu:incompatibilityReason "Wrong peripheral addresses (expects 0x3F..., needs 0x20...)" ;
+    qemu:notes "Same as raspi0 with different form factor" .
+
+# ------------------------------------------------------------------------------
+# raspi2b - Raspberry Pi 2B
+# ------------------------------------------------------------------------------
+
+qemu:raspi2b a qemu:RaspberryPiPlatform ;
+    qemu:machineType "raspi2b" ;
+    qemu:modelName "Raspberry Pi 2B" ;
+    qemu:revision "1.1" ;
+    qemu:soc hw:BCM2836 ;  # or BCM2837
+    qemu:cpuArchitecture "ARMv7"  ; # or ARMv8
+    qemu:cpu "Cortex-A7" ;  # or Cortex-A53
+    qemu:cpuCores 4 ;
+    qemu:is64Bit false ;  # Can run 64-bit
+    qemu:memory "1G"^^xsd:string ;
+    qemu:bootMethod qemu:GPUFirmwareBoot ;
+    qemu:requiresGPUFirmware true ;
+    qemu:requiredFirmware "bootcode.bin", "start.elf", "fixup.dat" ;
+    qemu:peripheralBase "0x3F000000"^^xsd:hexBinary ;
+    qemu:uartAddress "0x3F201000"^^xsd:hexBinary ;
+    qemu:gpioAddress "0x3F200000"^^xsd:hexBinary ;
+    qemu:timerAddress "0x3F003000"^^xsd:hexBinary ;
+    qemu:mailboxAddress "0x3F00B880"^^xsd:hexBinary ;
+    qemu:emmcAddress "0x3F300000"^^xsd:hexBinary ;
+    qemu:testPriority 2 ;
+    qemu:testStatus qemu:Untested ;
+    qemu:compatibilityWithCurrentBootloader qemu:Compatible ;
+    qemu:notes "Same addresses as raspi3b. Should work with current bootloader." .
+
+# ------------------------------------------------------------------------------
+# raspi3ap - Raspberry Pi 3A+
+# ------------------------------------------------------------------------------
+
+qemu:raspi3ap a qemu:RaspberryPiPlatform ;
+    qemu:machineType "raspi3ap" ;
+    qemu:modelName "Raspberry Pi 3A+" ;
+    qemu:revision "1.0" ;
+    qemu:soc hw:BCM2837B0 ;
+    qemu:cpuArchitecture "ARMv8" ;
+    qemu:cpu "Cortex-A53" ;
+    qemu:cpuCores 4 ;
+    qemu:is64Bit true ;
+    qemu:memory "512M"^^xsd:string ;
+    qemu:bootMethod qemu:GPUFirmwareBoot ;
+    qemu:requiresGPUFirmware true ;
+    qemu:requiredFirmware "bootcode.bin", "start.elf", "fixup.dat" ;
+    qemu:peripheralBase "0x3F000000"^^xsd:hexBinary ;
+    qemu:uartAddress "0x3F201000"^^xsd:hexBinary ;
+    qemu:gpioAddress "0x3F200000"^^xsd:hexBinary ;
+    qemu:timerAddress "0x3F003000"^^xsd:hexBinary ;
+    qemu:mailboxAddress "0x3F00B880"^^xsd:hexBinary ;
+    qemu:emmcAddress "0x3F300000"^^xsd:hexBinary ;
+    qemu:testPriority 2 ;
+    qemu:testStatus qemu:Untested ;
+    qemu:compatibilityWithCurrentBootloader qemu:Compatible ;
+    qemu:notes "Same addresses as raspi3b. Should work with current bootloader." .
+
+# ------------------------------------------------------------------------------
+# raspi3b - Raspberry Pi 3B (CURRENT TARGET)
+# ------------------------------------------------------------------------------
+
+qemu:raspi3b a qemu:RaspberryPiPlatform ;
+    qemu:machineType "raspi3b" ;
+    qemu:modelName "Raspberry Pi 3B" ;
+    qemu:revision "1.2" ;
+    qemu:soc hw:BCM2837 ;
+    qemu:cpuArchitecture "ARMv8" ;
+    qemu:cpu "Cortex-A53" ;
+    qemu:cpuCores 4 ;
+    qemu:is64Bit true ;
+    qemu:memory "1G"^^xsd:string ;
+    qemu:bootMethod qemu:GPUFirmwareBoot ;
+    qemu:requiresGPUFirmware true ;
+    qemu:requiredFirmware "bootcode.bin", "start.elf", "fixup.dat" ;
+    qemu:peripheralBase "0x3F000000"^^xsd:hexBinary ;
+    qemu:uartAddress "0x3F201000"^^xsd:hexBinary ;
+    qemu:gpioAddress "0x3F200000"^^xsd:hexBinary ;
+    qemu:timerAddress "0x3F003000"^^xsd:hexBinary ;
+    qemu:mailboxAddress "0x3F00B880"^^xsd:hexBinary ;
+    qemu:emmcAddress "0x3F300000"^^xsd:hexBinary ;
+    qemu:testPriority 1 ;
+    qemu:testStatus qemu:PartiallyWorking ;
+    qemu:compatibilityWithCurrentBootloader qemu:Compatible ;
+    qemu:notes "Current bootloader hardcoded to BCM2837 addresses. MATCHES PERFECTLY." .
+
+# ------------------------------------------------------------------------------
+# raspi4b - Raspberry Pi 4B
+# ------------------------------------------------------------------------------
+
+qemu:raspi4b a qemu:RaspberryPiPlatform ;
+    qemu:machineType "raspi4b" ;
+    qemu:modelName "Raspberry Pi 4B" ;
+    qemu:revision "1.5" ;
+    qemu:soc hw:BCM2711 ;
+    qemu:cpuArchitecture "ARMv8" ;
+    qemu:cpu "Cortex-A72" ;
+    qemu:cpuCores 4 ;
+    qemu:is64Bit true ;
+    qemu:memory "1G"^^xsd:string ;  # Also 2G, 4G, 8G variants
+    qemu:bootMethod qemu:GPUFirmwareBoot ;
+    qemu:requiresGPUFirmware true ;
+    qemu:requiredFirmware "bootcode.bin", "start4.elf", "fixup4.dat" ;
+    qemu:peripheralBase "0xFE000000"^^xsd:hexBinary ;
+    qemu:uartAddress "0xFE201000"^^xsd:hexBinary ;
+    qemu:gpioAddress "0xFE200000"^^xsd:hexBinary ;
+    qemu:timerAddress "0xFE003000"^^xsd:hexBinary ;
+    qemu:mailboxAddress "0xFE00B880"^^xsd:hexBinary ;
+    qemu:emmcAddress "0xFE300000"^^xsd:hexBinary ;
+    qemu:testPriority 1 ;
+    qemu:testStatus qemu:Untested ;
+    qemu:compatibilityWithCurrentBootloader qemu:Incompatible ;
+    qemu:incompatibilityReason "Wrong peripheral addresses (expects 0x3F..., needs 0xFE...)" ;
+    qemu:criticalIssue "THIS IS WHY REAL PI 4B HARDWARE BOOT FAILED!" ;
+    qemu:notes "Requires BCM2711 address detection. Uses start4.elf." .
+
+# ==============================================================================
+# Boot Method Taxonomy
+# ==============================================================================
+
+qemu:BootMethod a owl:Class ;
+    rdfs:label "Boot Method" ;
+    rdfs:comment "How QEMU boots the system" .
+
+qemu:DirectKernelBoot a qemu:BootMethod ;
+    rdfs:label "Direct Kernel Boot" ;
+    rdfs:comment "QEMU loads binary and starts CPU directly at entry point" ;
+    qemu:requiresFirmware false ;
+    qemu:cpuStartsAt "entry_point" ;
+    qemu:worksWithoutSDCard true .
+
+qemu:GPUFirmwareBoot a qemu:BootMethod ;
+    rdfs:label "GPU Firmware Boot" ;
+    rdfs:comment "VideoCore GPU loads firmware, then starts ARM CPU" ;
+    qemu:requiresFirmware true ;
+    qemu:cpuStartsAt "0x80000" ;
+    qemu:worksWithoutSDCard false ;
+    qemu:bootSequence (
+        "GPU loads bootcode.bin"
+        "GPU executes start.elf"
+        "GPU initializes ARM CPU"
+        "GPU loads kernel to 0x80000"
+        "GPU jumps ARM to 0x80000"
+    ) .
+
+qemu:GDBWorkaroundBoot a qemu:BootMethod ;
+    rdfs:label "GDB Workaround Boot" ;
+    rdfs:comment "Manually set PC via GDB to bypass firmware requirement" ;
+    qemu:requiresFirmware false ;
+    qemu:isHack true ;
+    qemu:cpuStartsAt "manually_set" ;
+    qemu:steps (
+        "Start QEMU with -s -S"
+        "Connect GDB"
+        "Set PC to 0x80000"
+        "Continue execution"
+    ) .
+
+# ==============================================================================
+# Test Specification
+# ==============================================================================
+
+test:QEMUTestCampaign a test:TestSuite ;
+    test:name "Comprehensive QEMU Platform Testing" ;
+    test:goal "Verify bootloader works on all 7 QEMU targets" ;
+    test:platforms (
+        qemu:virt
+        qemu:raspi0
+        qemu:raspi1ap
+        qemu:raspi2b
+        qemu:raspi3ap
+        qemu:raspi3b
+        qemu:raspi4b
+    ) ;
+    test:totalPlatforms 7 ;
+    test:currentlyTested 1 ;  # Only virt
+    test:currentlyWorking 1 ;  # Only virt
+    test:targetDate "2025-10-26"^^xsd:date .
+
+test:TestPhase a owl:Class ;
+    rdfs:label "Test Phase" ;
+    rdfs:comment "Phases of QEMU testing campaign" .
+
+test:Phase1_QuickVerification a test:TestPhase ;
+    test:name "Phase 1: Quick Verification" ;
+    test:duration "1 hour"^^xsd:string ;
+    test:platforms ( qemu:virt qemu:raspi3b qemu:raspi2b ) ;
+    test:method qemu:GDBWorkaroundBoot ;
+    test:expectedOutcome "Verify current code works on compatible platforms" .
+
+test:Phase2_FirmwareBoot a test:TestPhase ;
+    test:name "Phase 2: Firmware Boot Testing" ;
+    test:duration "2 hours"^^xsd:string ;
+    test:platforms ( qemu:raspi3b qemu:raspi4b ) ;
+    test:method qemu:GPUFirmwareBoot ;
+    test:prerequisite "Create SD card images with firmware" ;
+    test:expectedOutcome "raspi3b works, raspi4b fails (wrong addresses)" .
+
+test:Phase3_HardwareAbstraction a test:TestPhase ;
+    test:name "Phase 3: Add Hardware Abstraction" ;
+    test:duration "4 hours"^^xsd:string ;
+    test:prerequisite "Add hardware.c and hal.c to Makefile" ;
+    test:expectedOutcome "All platforms detect correct addresses" .
+
+test:Phase4_ComprehensiveTesting a test:TestPhase ;
+    test:name "Phase 4: Comprehensive Test Suite" ;
+    test:duration "6 hours"^^xsd:string ;
+    test:platforms (
+        qemu:virt
+        qemu:raspi0
+        qemu:raspi1ap
+        qemu:raspi2b
+        qemu:raspi3ap
+        qemu:raspi3b
+        qemu:raspi4b
+    ) ;
+    test:method qemu:GPUFirmwareBoot ;
+    test:expectedOutcome "All 7 platforms pass" .
+
+# ==============================================================================
+# Success Criteria
+# ==============================================================================
+
+test:SuccessCriteria a owl:Class ;
+    rdfs:label "Success Criteria" ;
+    rdfs:comment "What defines a successful QEMU test" .
+
+test:MinimalSuccess a test:SuccessCriteria ;
+    test:uartOutputVisible true ;
+    test:bootSequenceCompletes true ;
+    test:noGuestErrors true ;
+    test:subsystemsInitialize "core_only" .
+
+test:FullSuccess a test:SuccessCriteria ;
+    rdfs:subClassOf test:MinimalSuccess ;
+    test:subsystemsInitialize "all" ;
+    test:sdCardWorks true ;
+    test:interruptsWork true ;
+    test:allPeripheralsAccessible true .
+
+# ==============================================================================
+# Compatibility Matrix
+# ==============================================================================
+
+qemu:CompatibilityStatus a owl:Class ;
+    rdfs:label "Compatibility Status" .
+
+qemu:Compatible a qemu:CompatibilityStatus ;
+    rdfs:comment "Platform works with current bootloader" .
+
+qemu:Incompatible a qemu:CompatibilityStatus ;
+    rdfs:comment "Platform requires code changes" .
+
+qemu:RequiresFirmware a qemu:CompatibilityStatus ;
+    rdfs:comment "Platform needs SD card image with firmware" .
+
+# Current bootloader compatibility assessment
+boot:CurrentBootloader
+    qemu:compatibleWith qemu:virt, qemu:raspi2b, qemu:raspi3ap, qemu:raspi3b ;
+    qemu:incompatibleWith qemu:raspi0, qemu:raspi1ap, qemu:raspi4b ;
+    qemu:reasonForIncompatibility "Hardcoded BCM2837 addresses (0x3F...)" .
+
+# ==============================================================================
+# Required Code Changes
+# ==============================================================================
+
+qemu:RequiredChange a owl:Class ;
+    rdfs:label "Required Code Change" .
+
+qemu:AddHardwareDetection a qemu:RequiredChange ;
+    qemu:priority "P0-CRITICAL" ;
+    qemu:affectsPlatforms ( qemu:raspi0 qemu:raspi1ap qemu:raspi4b ) ;
+    qemu:description "Add hardware.c and hal.c to Makefile" ;
+    qemu:files "hardware.c", "hal.c" ;
+    qemu:estimatedTime "4 hours"^^xsd:string ;
+    qemu:enablesPlatforms ( qemu:raspi0 qemu:raspi1ap qemu:raspi4b ) .
+
+qemu:FixPointerCasts a qemu:RequiredChange ;
+    qemu:priority "P1-HIGH" ;
+    qemu:affectsPlatforms "all" ;
+    qemu:description "Use uintptr_t instead of uint32_t for addresses" ;
+    qemu:files "uart.c", "timer.c", "gpio.c", "mailbox.c", "sd.c" ;
+    qemu:estimatedTime "30 minutes"^^xsd:string ;
+    qemu:improvesCodeQuality true .
+
+# ==============================================================================
+# QEMU Command Templates
+# ==============================================================================
+
+qemu:CommandTemplate a owl:Class ;
+    rdfs:label "QEMU Command Template" .
+
+qemu:DirectBootCommand a qemu:CommandTemplate ;
+    qemu:template "qemu-system-aarch64 -M {machine} -cpu {cpu} -m {memory} -kernel {binary} -serial stdio -nographic" ;
+    qemu:applicableTo qemu:virt ;
+    qemu:example "qemu-system-aarch64 -M virt -cpu cortex-a72 -m 1G -kernel bootloader.bin -serial stdio -nographic" .
+
+qemu:FirmwareBootCommand a qemu:CommandTemplate ;
+    qemu:template "qemu-system-aarch64 -M {machine} -sd {sdcard} -serial stdio -nographic" ;
+    qemu:applicableTo qemu:raspi0, qemu:raspi1ap, qemu:raspi2b, qemu:raspi3ap, qemu:raspi3b, qemu:raspi4b ;
+    qemu:example "qemu-system-aarch64 -M raspi3b -sd sdcard_raspi3b.img -serial stdio -nographic" .
+
+qemu:DebugBootCommand a qemu:CommandTemplate ;
+    qemu:template "qemu-system-aarch64 -M {machine} -kernel {binary} -serial stdio -nographic -d guest_errors,cpu_reset,int -D {logfile}" ;
+    qemu:purpose "Debug boot failures" ;
+    qemu:example "qemu-system-aarch64 -M raspi4b -kernel bootloader.bin -serial stdio -nographic -d guest_errors,cpu_reset -D debug.log" .
+
+# ==============================================================================
+# Peripheral Address Ranges
+# ==============================================================================
+
+hw:BCM2835 a hw:SoC ;
+    hw:name "BCM2835" ;
+    hw:peripheralBase "0x20000000"^^xsd:hexBinary ;
+    hw:usedInModels ( qemu:raspi0 qemu:raspi1ap ) .
+
+hw:BCM2836 a hw:SoC ;
+    hw:name "BCM2836" ;
+    hw:peripheralBase "0x3F000000"^^xsd:hexBinary ;
+    hw:usedInModels ( qemu:raspi2b ) .
+
+hw:BCM2837 a hw:SoC ;
+    hw:name "BCM2837" ;
+    hw:peripheralBase "0x3F000000"^^xsd:hexBinary ;
+    hw:usedInModels ( qemu:raspi2b qemu:raspi3ap qemu:raspi3b ) .
+
+hw:BCM2837B0 a hw:SoC ;
+    hw:name "BCM2837B0" ;
+    hw:peripheralBase "0x3F000000"^^xsd:hexBinary ;
+    hw:usedInModels ( qemu:raspi3ap ) .
+
+hw:BCM2711 a hw:SoC ;
+    hw:name "BCM2711" ;
+    hw:peripheralBase "0xFE000000"^^xsd:hexBinary ;
+    hw:usedInModels ( qemu:raspi4b ) ;
+    hw:criticalDifference "Different base address from all previous SoCs!" .
+
+# ==============================================================================
+# Test Status Tracking
+# ==============================================================================
+
+qemu:TestStatus a owl:Class ;
+    rdfs:label "Test Status" .
+
+qemu:Verified a qemu:TestStatus ;
+    rdfs:comment "Platform tested and confirmed working" .
+
+qemu:PartiallyWorking a qemu:TestStatus ;
+    rdfs:comment "Platform loads but has limitations" .
+
+qemu:Untested a qemu:TestStatus ;
+    rdfs:comment "Platform not yet tested" .
+
+qemu:Failing a qemu:TestStatus ;
+    rdfs:comment "Platform tested but does not work" .
+
+# ==============================================================================
+# Rules and Inferences
+# ==============================================================================
+
+# Rule: If platform uses BCM2835/2836/2837, it's compatible with current bootloader
+{
+    ?platform qemu:peripheralBase "0x3F000000"^^xsd:hexBinary .
+} => {
+    ?platform qemu:compatibilityWithCurrentBootloader qemu:Compatible .
+} .
+
+# Rule: If platform requires firmware but no SD card provided, use GDB workaround
+{
+    ?platform qemu:requiresGPUFirmware true .
+    ?test qemu:hasSDCardImage false .
+} => {
+    ?test qemu:recommendedBootMethod qemu:GDBWorkaroundBoot .
+} .
+
+# Rule: Test priority 1 platforms first
+{
+    ?platform qemu:testPriority 1 .
+} => {
+    ?platform test:shouldTestFirst true .
+} .
+
+# ==============================================================================
+# Documentation and Metadata
+# ==============================================================================
+
+<> a owl:Ontology ;
+    rdfs:label "QEMU Test Specification Ontology" ;
+    rdfs:comment "Formal specification of QEMU emulation testing requirements for ARM64 bootloader" ;
+    owl:versionInfo "1.0" ;
+    test:created "2025-10-19"^^xsd:date ;
+    test:author "Claude Code + Stuart (moonman81)" ;
+    test:purpose "Define all 7 QEMU targets for comprehensive virtual testing" ;
+    test:relatedDocuments "docs/QEMU_TARGETS_ANALYSIS.md" ;
+    test:status "Active - Testing campaign planned" .
+
+# ==============================================================================
+# END OF ONTOLOGY
+# ==============================================================================

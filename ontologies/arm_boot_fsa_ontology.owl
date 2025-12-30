@@ -1,0 +1,759 @@
+rapper: Parsing URI file:///Users/nonroot/Projects/ARM-Bootloader/arm-boot-loader/ontologies/arm_boot_fsa_ontology.n3 with parser turtle
+rapper: Serializing with serializer rdfxml
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://example.org/arm-boot-fsa#">
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa">
+    <rdfs:label>ARM Boot FSA Ontology</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#State">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#State">
+    <rdfs:label>State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#State">
+    <rdfs:comment>States in the boot FSA</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Transition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Transition">
+    <rdfs:label>Transition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Transition">
+    <rdfs:comment>Transitions between states</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Condition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Condition">
+    <rdfs:label>Condition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Condition">
+    <rdfs:comment>Conditions for transitions</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#RaspberryPiModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#RaspberryPiModel">
+    <rdfs:label>Raspberry Pi Model</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#RaspberryPiModel">
+    <rdfs:comment>ARM-based Raspberry Pi models</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Finding">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Finding">
+    <rdfs:label>Finding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Finding">
+    <rdfs:comment>Additional findings from analysis</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#hasState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#hasState">
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#hasState">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#hasState">
+    <rdfs:label>has State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#hasTransition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#hasTransition">
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#hasTransition">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#hasTransition">
+    <rdfs:label>has Transition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#fromState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#fromState">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#fromState">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#fromState">
+    <rdfs:label>from State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#toState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#toState">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#toState">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#toState">
+    <rdfs:label>to State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#hasCondition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#hasCondition">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#hasCondition">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-fsa#Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#hasCondition">
+    <rdfs:label>has Condition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#appliesToModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#appliesToModel">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#appliesToModel">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-fsa#RaspberryPiModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#appliesToModel">
+    <rdfs:label>applies To Model</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#description">
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#description">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#description">
+    <rdfs:label>description</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#cpuArchitecture">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#cpuArchitecture">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-fsa#RaspberryPiModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#cpuArchitecture">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#cpuArchitecture">
+    <rdfs:label>cpu Architecture</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#findingType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#findingType">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-fsa#Finding"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#findingType">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#findingType">
+    <rdfs:label>finding Type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#PowerOn">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#PowerOn">
+    <description>Initial state after power on</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#ROMExecution">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#ROMExecution">
+    <description>ROM code executing, searching for boot media</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootcodeLoading">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootcodeLoading">
+    <description>Loading bootcode.bin from boot media</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootcodeExecution">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootcodeExecution">
+    <description>Executing bootcode.bin, initializing SDRAM</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#StartElfLoading">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#StartElfLoading">
+    <description>Loading start.elf from boot media</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#StartElfExecution">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#StartElfExecution">
+    <description>Executing start.elf, hardware initialization</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#KernelLoading">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#KernelLoading">
+    <description>Loading kernel image</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#KernelExecution">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#KernelExecution">
+    <description>Executing kernel, OS boot</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootSuccess">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootSuccess">
+    <description>Successful boot, OS running</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#NoBootMedia">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#NoBootMedia">
+    <description>Failure: No bootable media found</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#FirmwareCorrupt">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#FirmwareCorrupt">
+    <description>Failure: Corrupt or missing firmware</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#SecureBootFail">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#SecureBootFail">
+    <description>Failure: Secure boot verification failed</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#HardwareFail">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#HardwareFail">
+    <description>Failure: Hardware initialization failed</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#PowerStable">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#PowerStable">
+    <description>Power supply stable</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootMediaFound">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootMediaFound">
+    <description>Bootable media detected</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#FileValid">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#FileValid">
+    <description>Firmware file exists and valid</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#SignatureValid">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#SignatureValid">
+    <description>Digital signature verified (secure boot)</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#HardwareOK">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#HardwareOK">
+    <description>Hardware initialization successful</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#KernelValid">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#KernelValid">
+    <description>Kernel image valid and compatible</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T1">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T1">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#PowerOn"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T1">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#ROMExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T1">
+    <hasCondition rdf:resource="http://example.org/arm-boot-fsa#PowerStable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T1">
+    <description>Power on to ROM execution</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T2">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T2">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#ROMExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T2">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#BootcodeLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T2">
+    <hasCondition rdf:resource="http://example.org/arm-boot-fsa#BootMediaFound"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T2">
+    <description>ROM to bootcode loading if media found</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T3">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T3">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#ROMExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T3">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#NoBootMedia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T3">
+    <description>ROM to failure if no media</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T4">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T4">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#BootcodeLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T4">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#BootcodeExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T4">
+    <hasCondition rdf:resource="http://example.org/arm-boot-fsa#FileValid"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T4">
+    <description>Bootcode loading to execution if valid</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T5">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T5">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#BootcodeLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T5">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#FirmwareCorrupt"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T5">
+    <description>Bootcode loading to failure if invalid</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T6">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T6">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#BootcodeExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T6">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#StartElfLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T6">
+    <hasCondition rdf:resource="http://example.org/arm-boot-fsa#HardwareOK"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T6">
+    <description>Bootcode execution to start.elf loading</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T7">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T7">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#BootcodeExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T7">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#HardwareFail"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T7">
+    <description>Bootcode execution to hardware failure</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T8">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T8">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#StartElfLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T8">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#StartElfExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T8">
+    <hasCondition rdf:resource="http://example.org/arm-boot-fsa#FileValid"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T8">
+    <description>Start.elf loading to execution</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T9">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T9">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#StartElfLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T9">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#FirmwareCorrupt"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T9">
+    <description>Start.elf loading to failure</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T10">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T10">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#StartElfExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T10">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#KernelLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T10">
+    <hasCondition rdf:resource="http://example.org/arm-boot-fsa#HardwareOK"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T10">
+    <description>Start.elf execution to kernel loading</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T11">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T11">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#StartElfExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T11">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#HardwareFail"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T11">
+    <description>Start.elf execution to hardware failure</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T12">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T12">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#KernelLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T12">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#KernelExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T12">
+    <hasCondition rdf:resource="http://example.org/arm-boot-fsa#KernelValid"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T12">
+    <description>Kernel loading to execution</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T13">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T13">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#KernelLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T13">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#FirmwareCorrupt"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T13">
+    <description>Kernel loading to failure</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T14">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T14">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#KernelExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T14">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#BootSuccess"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T14">
+    <description>Kernel execution to success</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T15">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T15">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#KernelExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T15">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#HardwareFail"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T15">
+    <description>Kernel execution to failure</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T16">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T16">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#BootcodeLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T16">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#SecureBootFail"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T16">
+    <hasCondition rdf:resource="http://example.org/arm-boot-fsa#SignatureValid"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T16">
+    <appliesToModel rdf:resource="http://example.org/arm-boot-fsa#Pi4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T16">
+    <appliesToModel rdf:resource="http://example.org/arm-boot-fsa#Pi5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T16">
+    <description>Bootcode loading fails secure boot check</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T17">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T17">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#StartElfLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T17">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#SecureBootFail"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T17">
+    <hasCondition rdf:resource="http://example.org/arm-boot-fsa#SignatureValid"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T17">
+    <appliesToModel rdf:resource="http://example.org/arm-boot-fsa#Pi4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T17">
+    <appliesToModel rdf:resource="http://example.org/arm-boot-fsa#Pi5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T17">
+    <description>Start.elf loading fails secure boot check</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T18">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T18">
+    <fromState rdf:resource="http://example.org/arm-boot-fsa#KernelLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T18">
+    <toState rdf:resource="http://example.org/arm-boot-fsa#SecureBootFail"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T18">
+    <hasCondition rdf:resource="http://example.org/arm-boot-fsa#SignatureValid"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T18">
+    <appliesToModel rdf:resource="http://example.org/arm-boot-fsa#Pi4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T18">
+    <appliesToModel rdf:resource="http://example.org/arm-boot-fsa#Pi5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#T18">
+    <description>Kernel loading fails secure boot check</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi1">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#RaspberryPiModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi1">
+    <cpuArchitecture>ARM11</cpuArchitecture>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi1">
+    <description>Raspberry Pi 1 (ARM11)</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi2">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#RaspberryPiModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi2">
+    <cpuArchitecture>Cortex-A7</cpuArchitecture>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi2">
+    <description>Raspberry Pi 2 (Cortex-A7)</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi3">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#RaspberryPiModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi3">
+    <cpuArchitecture>Cortex-A53</cpuArchitecture>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi3">
+    <description>Raspberry Pi 3 (Cortex-A53)</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi4">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#RaspberryPiModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi4">
+    <cpuArchitecture>Cortex-A72</cpuArchitecture>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi4">
+    <description>Raspberry Pi 4 (Cortex-A72)</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi5">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#RaspberryPiModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi5">
+    <cpuArchitecture>Cortex-A76</cpuArchitecture>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Pi5">
+    <description>Raspberry Pi 5 (Cortex-A76)</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#PiZero">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#RaspberryPiModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#PiZero">
+    <cpuArchitecture>ARM11</cpuArchitecture>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#PiZero">
+    <description>Raspberry Pi Zero (ARM11)</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#PiZero2">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#RaspberryPiModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#PiZero2">
+    <cpuArchitecture>Cortex-A53</cpuArchitecture>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#PiZero2">
+    <description>Raspberry Pi Zero 2 (Cortex-A53)</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#FSA_Deterministic">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Finding"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#FSA_Deterministic">
+    <findingType>FSA Property</findingType>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#FSA_Deterministic">
+    <description>The boot process FSA is deterministic with no non-determinism</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Sequential_Process">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Finding"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Sequential_Process">
+    <findingType>Process Characteristic</findingType>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Sequential_Process">
+    <description>Boot process is primarily sequential with branches only on failures</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Model_Differences">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Finding"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Model_Differences">
+    <findingType>Model Variation</findingType>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Model_Differences">
+    <description>FSA transitions vary by model: Pi 1-3 no USB boot, Pi 4-5 support secure boot and NVMe</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Recovery_Mechanisms">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Finding"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Recovery_Mechanisms">
+    <findingType>Recovery</findingType>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Recovery_Mechanisms">
+    <description>Recovery involves retrying boot or using different media; no automatic recovery in FSA</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#LED_Indicators">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Finding"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#LED_Indicators">
+    <findingType>Diagnostic</findingType>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#LED_Indicators">
+    <description>LED patterns indicate current state and failure modes for debugging</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Boot_Order">
+    <rdf:type rdf:resource="http://example.org/arm-boot-fsa#Finding"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Boot_Order">
+    <findingType>Boot Logic</findingType>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#Boot_Order">
+    <description>Boot media tried in order: SD, USB, NVMe, network (model dependent)</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasState rdf:resource="http://example.org/arm-boot-fsa#PowerOn"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasState rdf:resource="http://example.org/arm-boot-fsa#ROMExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasState rdf:resource="http://example.org/arm-boot-fsa#BootcodeLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasState rdf:resource="http://example.org/arm-boot-fsa#BootcodeExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasState rdf:resource="http://example.org/arm-boot-fsa#StartElfLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasState rdf:resource="http://example.org/arm-boot-fsa#StartElfExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasState rdf:resource="http://example.org/arm-boot-fsa#KernelLoading"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasState rdf:resource="http://example.org/arm-boot-fsa#KernelExecution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasState rdf:resource="http://example.org/arm-boot-fsa#BootSuccess"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasState rdf:resource="http://example.org/arm-boot-fsa#NoBootMedia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasState rdf:resource="http://example.org/arm-boot-fsa#FirmwareCorrupt"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasState rdf:resource="http://example.org/arm-boot-fsa#SecureBootFail"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasState rdf:resource="http://example.org/arm-boot-fsa#HardwareFail"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T10"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T11"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T12"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T13"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T16"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T17"/>
+  </rdf:Description>
+  <rdf:Descriptirapper: Parsing returned 251 triples
+on rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <hasTransition rdf:resource="http://example.org/arm-boot-fsa#T18"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-fsa#BootFSA">
+    <description>Finite State Automata for ARM boot process on Raspberry Pi</description>
+  </rdf:Description>
+</rdf:RDF>

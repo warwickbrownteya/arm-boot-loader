@@ -1,0 +1,253 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://example.org/arm-boot-fsa#> .
+@prefix boot: <http://example.org/arm-boot-fsa#> .
+@prefix shapes: <http://example.org/arm-boot-shapes#> .
+
+# =============================================================================
+# ARM Boot FSA - SHACL Validation Shapes
+# Generated: 2025-12-27
+# Usage: pyshacl -s arm_boot_shapes.ttl -df turtle ../arm_boot_fsa_ontology.n3
+# =============================================================================
+
+# =============================================================================
+# STATE SHAPES
+# =============================================================================
+
+shapes:StateShape a sh:NodeShape ;
+    sh:targetClass boot:State ;
+    sh:name "Boot State Shape" ;
+    sh:description "Validates boot state instances" ;
+
+    # Every state must have a description
+    sh:property [
+        sh:path boot:description ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:minLength 5 ;
+        sh:name "State description" ;
+        sh:message "Every state must have exactly one description (string, min 5 chars)"
+    ] ;
+
+    # States should have a label
+    sh:property [
+        sh:path rdfs:label ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "State label" ;
+        sh:severity sh:Warning ;
+        sh:message "States should have a label"
+    ] .
+
+# =============================================================================
+# TRANSITION SHAPES
+# =============================================================================
+
+shapes:TransitionShape a sh:NodeShape ;
+    sh:targetClass boot:Transition ;
+    sh:name "Boot Transition Shape" ;
+    sh:description "Validates state transition instances" ;
+
+    # Every transition must have exactly one source state
+    sh:property [
+        sh:path boot:fromState ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class boot:State ;
+        sh:name "Source state" ;
+        sh:message "Transition must have exactly one fromState of type State"
+    ] ;
+
+    # Every transition must have exactly one target state
+    sh:property [
+        sh:path boot:toState ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class boot:State ;
+        sh:name "Target state" ;
+        sh:message "Transition must have exactly one toState of type State"
+    ] ;
+
+    # Transition should have a description
+    sh:property [
+        sh:path boot:description ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "Transition description" ;
+        sh:message "Transition must have a description"
+    ] ;
+
+    # Transition condition is optional but should be a Condition if present
+    sh:property [
+        sh:path boot:hasCondition ;
+        sh:maxCount 1 ;
+        sh:class boot:Condition ;
+        sh:name "Transition condition" ;
+        sh:severity sh:Warning ;
+        sh:message "If present, hasCondition should reference a Condition"
+    ] .
+
+# =============================================================================
+# CONDITION SHAPES
+# =============================================================================
+
+shapes:ConditionShape a sh:NodeShape ;
+    sh:targetClass boot:Condition ;
+    sh:name "Boot Condition Shape" ;
+    sh:description "Validates condition instances" ;
+
+    # Every condition must have a description
+    sh:property [
+        sh:path boot:description ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "Condition description" ;
+        sh:message "Condition must have exactly one description"
+    ] .
+
+# =============================================================================
+# RASPBERRY PI MODEL SHAPES
+# =============================================================================
+
+shapes:RaspberryPiModelShape a sh:NodeShape ;
+    sh:targetClass boot:RaspberryPiModel ;
+    sh:name "Raspberry Pi Model Shape" ;
+    sh:description "Validates Raspberry Pi model instances" ;
+
+    # Every model must have a CPU architecture
+    sh:property [
+        sh:path boot:cpuArchitecture ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "CPU Architecture" ;
+        sh:message "Pi model must have exactly one cpuArchitecture"
+    ] ;
+
+    # CPU architecture should be a known value
+    sh:property [
+        sh:path boot:cpuArchitecture ;
+        sh:in ( "ARM11" "Cortex-A7" "Cortex-A53" "Cortex-A72" "Cortex-A76" ) ;
+        sh:name "Valid CPU Architecture" ;
+        sh:severity sh:Warning ;
+        sh:message "cpuArchitecture should be one of: ARM11, Cortex-A7, Cortex-A53, Cortex-A72, Cortex-A76"
+    ] ;
+
+    # Every model must have a description
+    sh:property [
+        sh:path boot:description ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "Model description" ;
+        sh:message "Pi model must have a description"
+    ] .
+
+# =============================================================================
+# FINDING SHAPES
+# =============================================================================
+
+shapes:FindingShape a sh:NodeShape ;
+    sh:targetClass boot:Finding ;
+    sh:name "Finding Shape" ;
+    sh:description "Validates finding instances" ;
+
+    # Every finding must have a type
+    sh:property [
+        sh:path boot:findingType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "Finding type" ;
+        sh:message "Finding must have exactly one findingType"
+    ] ;
+
+    # Every finding must have a description
+    sh:property [
+        sh:path boot:description ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "Finding description" ;
+        sh:message "Finding must have a description"
+    ] .
+
+# =============================================================================
+# FSA DEFINITION SHAPE
+# =============================================================================
+
+shapes:BootFSAShape a sh:NodeShape ;
+    sh:targetNode boot:BootFSA ;
+    sh:name "Boot FSA Definition Shape" ;
+    sh:description "Validates the FSA definition itself" ;
+
+    # FSA must have at least one state
+    sh:property [
+        sh:path boot:hasState ;
+        sh:minCount 1 ;
+        sh:class boot:State ;
+        sh:name "FSA states" ;
+        sh:message "FSA must have at least one state"
+    ] ;
+
+    # FSA must have at least one transition
+    sh:property [
+        sh:path boot:hasTransition ;
+        sh:minCount 1 ;
+        sh:class boot:Transition ;
+        sh:name "FSA transitions" ;
+        sh:message "FSA must have at least one transition"
+    ] ;
+
+    # FSA should have a description
+    sh:property [
+        sh:path boot:description ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:name "FSA description" ;
+        sh:message "FSA should have a description"
+    ] .
+
+# =============================================================================
+# CROSS-ENTITY VALIDATION (SPARQL-based)
+# =============================================================================
+
+# Ensure transitions don't have same source and target (no self-loops except terminal)
+shapes:NoSelfLoopShape a sh:NodeShape ;
+    sh:targetClass boot:Transition ;
+    sh:name "No Self-Loop Shape" ;
+    sh:description "Transitions should not loop to the same state" ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        sh:message "Transition {$this} has same source and target state (self-loop)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            PREFIX boot: <http://example.org/arm-boot-fsa#>
+            SELECT $this
+            WHERE {
+                $this boot:fromState ?state .
+                $this boot:toState ?state .
+            }
+        """
+    ] .
+
+# Ensure all states referenced in transitions exist
+shapes:TransitionStateExistsShape a sh:NodeShape ;
+    sh:targetClass boot:Transition ;
+    sh:name "Transition State Exists Shape" ;
+    sh:description "States in transitions must be declared" ;
+    sh:sparql [
+        sh:message "Transition {$this} references undeclared fromState" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            PREFIX boot: <http://example.org/arm-boot-fsa#>
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            SELECT $this
+            WHERE {
+                $this boot:fromState ?state .
+                FILTER NOT EXISTS { ?state rdf:type boot:State }
+            }
+        """
+    ] .

@@ -1,0 +1,131 @@
+% ARM Boot FSA - Prover9/LADR Format
+% Generated: 2025-12-27
+% Usage: prover9 -f arm_boot_fsa.in
+%        mace4 -f arm_boot_fsa.in  (for counterexamples)
+
+% ============================================================================
+% DOMAIN DECLARATIONS
+% ============================================================================
+
+set(auto).
+
+formulas(assumptions).
+
+% ============================================================================
+% BOOT STATES (13 states as constants)
+% ============================================================================
+
+% State declarations (implicit in LADR)
+
+% ============================================================================
+% STATE CLASSIFICATION
+% ============================================================================
+
+% Terminal states
+terminal(boot_success).
+terminal(no_boot_media).
+terminal(firmware_corrupt).
+terminal(secure_boot_fail).
+terminal(hardware_fail).
+
+% Success state
+success(boot_success).
+
+% Failure states
+failure(no_boot_media).
+failure(firmware_corrupt).
+failure(secure_boot_fail).
+failure(hardware_fail).
+
+% Initial state
+initial(power_on).
+
+% Loading states
+loading(bootcode_loading).
+loading(startelf_loading).
+loading(kernel_loading).
+
+% Execution states
+execution(rom_execution).
+execution(bootcode_execution).
+execution(startelf_execution).
+execution(kernel_execution).
+
+% ============================================================================
+% TRANSITION RELATION (18 transitions)
+% ============================================================================
+
+% Happy path transitions
+transition(power_on, rom_execution).
+transition(rom_execution, bootcode_loading).
+transition(bootcode_loading, bootcode_execution).
+transition(bootcode_execution, startelf_loading).
+transition(startelf_loading, startelf_execution).
+transition(startelf_execution, kernel_loading).
+transition(kernel_loading, kernel_execution).
+transition(kernel_execution, boot_success).
+
+% Failure transitions
+transition(rom_execution, no_boot_media).
+transition(bootcode_loading, firmware_corrupt).
+transition(bootcode_execution, hardware_fail).
+transition(startelf_loading, firmware_corrupt).
+transition(startelf_execution, hardware_fail).
+transition(kernel_loading, firmware_corrupt).
+transition(kernel_execution, hardware_fail).
+
+% Secure boot failure transitions
+transition(bootcode_loading, secure_boot_fail).
+transition(startelf_loading, secure_boot_fail).
+transition(kernel_loading, secure_boot_fail).
+
+% ============================================================================
+% REACHABILITY (Transitive Closure)
+% ============================================================================
+
+% Base case: direct transition implies reachability
+all X all Y (transition(X, Y) -> reachable(X, Y)).
+
+% Reflexivity
+all X reachable(X, X).
+
+% Transitivity
+all X all Y all Z (reachable(X, Y) & reachable(Y, Z) -> reachable(X, Z)).
+
+% ============================================================================
+% FSA PROPERTIES
+% ============================================================================
+
+% Terminal states have no outgoing transitions
+all X all Y (terminal(X) -> -transition(X, Y)).
+
+% Success and failure are mutually exclusive
+all X -(success(X) & failure(X)).
+
+% Non-terminal states have successors
+all X (-terminal(X) -> (exists Y transition(X, Y))).
+
+% ============================================================================
+% BOOT PATH DEFINITIONS
+% ============================================================================
+
+% A boot path starts at initial and ends at terminal
+all X all Y (initial(X) & terminal(Y) & reachable(X, Y) -> boot_path(X, Y)).
+
+% Successful boot
+all X all Y (boot_path(X, Y) & success(Y) -> successful_boot(X, Y)).
+
+% Failed boot
+all X all Y (boot_path(X, Y) & failure(Y) -> failed_boot(X, Y)).
+
+end_of_list.
+
+% ============================================================================
+% GOAL: Boot success is reachable from power on
+% ============================================================================
+
+formulas(goals).
+
+reachable(power_on, boot_success).
+
+end_of_list.

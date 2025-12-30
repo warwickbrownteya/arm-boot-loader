@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://example.org/arm-boot-integrated-fsa#">
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa">
+    <rdfs:label>Integrated FSA Ontology</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#FSATransition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#FSATransition">
+    <rdfs:label>FSA Transition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#FSATransition">
+    <rdfs:comment>Transitions in the boot FSA</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#KripkeModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#KripkeModel">
+    <rdfs:label>Kripke Model</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#KripkeModel">
+    <rdfs:comment>Modal logic model</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#TarskiModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#TarskiModel">
+    <rdfs:label>Tarski Model</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#TarskiModel">
+    <rdfs:comment>Truth model</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#CategoryModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#CategoryModel">
+    <rdfs:label>Category Model</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#CategoryModel">
+    <rdfs:comment>Category theory model</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#DomainModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#DomainModel">
+    <rdfs:label>Domain Model</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#DomainModel">
+    <rdfs:comment>Scott domain model</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#TypeModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#TypeModel">
+    <rdfs:label>Type Model</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#TypeModel">
+    <rdfs:comment>Type theory model</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#HomotopyModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#HomotopyModel">
+    <rdfs:label>Homotopy Model</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#HomotopyModel">
+    <rdfs:comment>Homotopy theory model</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasKripke">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasKripke">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasKripke">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-integrated-fsa#KripkeModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasKripke">
+    <rdfs:label>has Kripke</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasTarski">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasTarski">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasTarski">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-integrated-fsa#TarskiModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasTarski">
+    <rdfs:label>has Tarski</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasCategory">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasCategory">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-integrated-fsa#CategoryModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasCategory">
+    <rdfs:label>has Category</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasDomain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasDomain">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasDomain">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-integrated-fsa#DomainModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasDomain">
+    <rdfs:label>has Domain</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasType">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasType">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-integrated-fsa#TypeModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasType">
+    <rdfs:label>has Type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasHomotopy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasHomotopy">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasHomotopy">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-integrated-fsa#HomotopyModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#hasHomotopy">
+    <rdfs:label>has Homotopy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#description">
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#description">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#description">
+    <rdfs:label>description</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1">
+    <description>PowerOn to ROMExecution</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T2">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T2">
+    <description>ROMExecution to BootcodeLoading</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T3">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T3">
+    <description>ROMExecution to NoBootMedia</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T4">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T4">
+    <description>BootcodeLoading to BootcodeExecution</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T5">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T5">
+    <description>BootcodeLoading to FirmwareCorrupt</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T6">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T6">
+    <description>BootcodeExecution to StartElfLoading</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T7">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T7">
+    <description>BootcodeExecution to HardwareFail</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T8">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T8">
+    <description>StartElfLoading to StartElfExecution</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T9">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T9">
+    <description>StartElfLoading to FirmwareCorrupt</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T10">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T10">
+    <description>StartElfExecution to KernelLoading</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T11">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T11">
+    <description>StartElfExecution to HardwareFail</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T12">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T12">
+    <description>KernelLoading to KernelExecution</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T13">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T13">
+    <description>KernelLoading to FirmwareCorrupt</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T14">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T14">
+    <description>KernelExecution to BootSuccess</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T15">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#FSATransition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T15">
+    <description>KernelExecution to HardwareFail</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1_Kripke">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#KripkeModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1_Kripke">
+    <description>□ PowerStable for T1</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1_Tarski">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#TarskiModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1_Tarski">
+    <description>Truth: PowerStable ⊨ ROMActive</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1_Category">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#CategoryModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1_Category">
+    <description>Morphism: PowerStable → ROMExecution</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1_Domain">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#DomainModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1_Domain">
+    <description>Domain order: PowerOff ⊏ ROMExecution</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1_Type">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#TypeModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1_Type">
+    <description>Function: PowerOn → ROMType</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1_Homotopy">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#HomotopyModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1_Homotopy">
+    <description>Path: PowerOn to ROM</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1">
+    <hasKripke rdf:resource="http://example.org/arm-boot-integrated-fsa#T1_Kripke"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1">
+    <hasTarski rdf:resource="http://example.org/arm-boot-integrated-fsa#T1_Tarski"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1">
+    <hasCategory rdf:resource="http://example.org/arm-boot-integrated-fsa#T1_Category"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1">
+    <hasDomain rdf:resource="http://example.org/arm-boot-integrated-fsa#T1_Domain"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1">
+    <hasType rdf:resource="http://example.org/arm-boot-integrated-fsa#T1_Type"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T1">
+    <hasHomotopy rdf:resource="http://example.org/arm-boot-integrated-fsa#T1_Homotopy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T2_Kripke">
+    <rdf:type rdf:resource="http://example.org/arm-boot-integrated-fsa#KripkeModel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T2_Kripke">
+    <description>◇ BootMediaFound for T2</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-integrated-fsa#T2">
+    <hasKripke rdf:resource="http://example.org/arm-boot-integrated-fsa#T2_Kripke"/>
+  </rdf:Description>
+</rdf:RDF>

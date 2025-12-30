@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://example.org/arm-boot-scott#">
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#Domain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#Domain">
+    <rdfs:label>Domain</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#Domain">
+    <rdfs:comment>A set with a partial order that is directed complete</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#PartialOrder">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#PartialOrder">
+    <rdfs:label>Partial Order</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#PartialOrder">
+    <rdfs:comment>Reflexive, antisymmetric, transitive relation</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#DirectedSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#DirectedSet">
+    <rdfs:label>Directed Set</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#DirectedSet">
+    <rdfs:comment>Set where every pair has an upper bound</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#LeastElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#LeastElement">
+    <rdfs:label>Least Element (Bottom)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#LeastElement">
+    <rdfs:comment>⊥ - the minimal element in the domain</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#FixedPoint">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#FixedPoint">
+    <rdfs:label>Fixed Point</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#FixedPoint">
+    <rdfs:comment>Element x such that f(x) = x for some function f</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#ContinuousFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#ContinuousFunction">
+    <rdfs:label>Continuous Function</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#ContinuousFunction">
+    <rdfs:comment>Function preserving directed suprema</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootStateDomain">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#Domain"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootStateDomain">
+    <rdfs:label>Boot State Domain</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootStateDomain">
+    <hasPartialOrder rdf:resource="http://example.org/arm-boot-scott#BootStateOrder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootStateDomain">
+    <hasLeastElement rdf:resource="http://example.org/arm-boot-scott#BootFailureState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootStateDomain">
+    <hasFixedPoint rdf:resource="http://example.org/arm-boot-scott#BootSuccessState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootStateOrder">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#PartialOrder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootStateOrder">
+    <rdfs:label>Boot State Partial Order</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootStateOrder">
+    <orderingPrinciple>States ordered by progress toward completion</orderingPrinciple>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootStateElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootStateElement">
+    <rdfs:label>Boot State Domain Element</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootFailureState">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#BootStateElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootFailureState">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#LeastElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootFailureState">
+    <rdfs:label>Boot Failure State (⊥)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootFailureState">
+    <represents rdf:resource="http://example.org/arm-boot-scott#STATE_FAILURE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootFailureState">
+    <isMinimal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isMinimal>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootcodeLoadingState">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#BootStateElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootcodeLoadingState">
+    <rdfs:label>Bootcode Loading State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootcodeLoadingState">
+    <represents rdf:resource="http://example.org/arm-boot-scott#STATE_BOOTCODE_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootcodeLoadingState">
+    <greaterThan rdf:resource="http://example.org/arm-boot-scott#BootFailureState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootcodeExecState">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#BootStateElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootcodeExecState">
+    <rdfs:label>Bootcode Execution State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootcodeExecState">
+    <represents rdf:resource="http://example.org/arm-boot-scott#STATE_BOOTCODE_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootcodeExecState">
+    <greaterThan rdf:resource="http://example.org/arm-boot-scott#BootcodeLoadingState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#StartelfLoadingState">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#BootStateElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#StartelfLoadingState">
+    <rdfs:label>Start.elf Loading State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#StartelfLoadingState">
+    <represents rdf:resource="http://example.org/arm-boot-scott#STATE_STARTELF_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#StartelfLoadingState">
+    <greaterThan rdf:resource="http://example.org/arm-boot-scott#BootcodeExecState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#StartelfExecState">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#BootStateElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#StartelfExecState">
+    <rdfs:label>Start.elf Execution State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#StartelfExecState">
+    <represents rdf:resource="http://example.org/arm-boot-scott#STATE_STARTELF_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#StartelfExecState">
+    <greaterThan rdf:resource="http://example.org/arm-boot-scott#StartelfLoadingState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#KernelLoadingState">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#BootStateElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#KernelLoadingState">
+    <rdfs:label>Kernel Loading State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#KernelLoadingState">
+    <represents rdf:resource="http://example.org/arm-boot-scott#STATE_KERNEL_LOADING"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#KernelLoadingState">
+    <greaterThan rdf:resource="http://example.org/arm-boot-scott#StartelfExecState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#KernelExecState">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#BootStateElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#KernelExecState">
+    <rdfs:label>Kernel Execution State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#KernelExecState">
+    <represents rdf:resource="http://example.org/arm-boot-scott#STATE_KERNEL_EXEC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#KernelExecState">
+    <greaterThan rdf:resource="http://example.org/arm-boot-scott#KernelLoadingState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootSuccessState">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#BootStateElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootSuccessState">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#FixedPoint"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootSuccessState">
+    <rdfs:label>Boot Success State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootSuccessState">
+    <represents rdf:resource="http://example.org/arm-boot-scott#STATE_SUCCESS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootSuccessState">
+    <greaterThan rdf:resource="http://example.org/arm-boot-scott#KernelExecState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootSuccessState">
+    <isFixedPoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isFixedPoint>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#DirectedSupremum">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#DirectedSupremum">
+    <rdfs:label>Directed Supremum</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#DirectedSupremum">
+    <rdfs:comment>Least upper bound of a directed set</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid1">
+    <rdf:first rdf:resource="http://example.org/arm-boot-scott#StartelfLoadingState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid1">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid2">
+    <rdf:first rdf:resource="http://example.org/arm-boot-scott#BootcodeExecState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid2">
+    <rdf:rest rdf:nodeID="genid1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid3">
+    <rdf:first rdf:resource="http://example.org/arm-boot-scott#BootcodeLoadingState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid3">
+    <rdf:rest rdf:nodeID="genid2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootProgressSupremum">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#DirectedSupremum"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootProgressSupremum">
+    <ofSet rdf:nodeID="genid3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootProgressSupremum">
+    <equals rdf:resource="http://example.org/arm-boot-scott#StartelfExecState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid4">
+    <rdf:first rdf:resource="http://example.org/arm-boot-scott#BootStateDomain"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid4">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#CompleteBootSupremum">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#DirectedSupremum"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#CompleteBootSupremum">
+    <ofSet rdf:nodeID="genid4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#CompleteBootSupremum">
+    <equals rdf:resource="http://example.org/arm-boot-scott#BootSuccessState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootTransitionFunction">
+    <rdf:type rdf:resource="http://example.org/arm-boot-scott#ContinuousFunction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootTransitionFunction">
+    <rdfs:label>Boot State Transition Function</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootTransitionFunction">
+    <domain rdf:resource="http://example.org/arm-boot-scott#BootStateDomain"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootTransitionFunction">
+    <codomain rdf:resource="http://example.org/arm-boot-scott#BootStateDomain"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#BootTransitionFunction">
+    <preservesSuprema rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</preservesSuprema>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-scott#maps">
+    <BootSuccessState rdf:resource="http://example.org/arm-boot-scott#BootSuccessState"/>
+  </rdf:Description>
+</rdf:RDF>

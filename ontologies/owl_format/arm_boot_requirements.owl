@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://example.org/arm-boot-requirements#">
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements">
+    <rdfs:label>ARM Boot Requirements Ontology</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#Stakeholder">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#Stakeholder">
+    <rdfs:label>Stakeholder</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#Stakeholder">
+    <rdfs:comment>Entities with interest in the boot process</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#Requirement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#Requirement">
+    <rdfs:label>Requirement</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#Requirement">
+    <rdfs:comment>Specifications that the system must meet</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#FunctionalRequirement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#FunctionalRequirement">
+    <rdfs:subClassOf rdf:resource="http://example.org/arm-boot-requirements#Requirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#FunctionalRequirement">
+    <rdfs:label>Functional Requirement</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#FunctionalRequirement">
+    <rdfs:comment>Requirements specifying what the system should do</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#NonFunctionalRequirement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#NonFunctionalRequirement">
+    <rdfs:subClassOf rdf:resource="http://example.org/arm-boot-requirements#Requirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#NonFunctionalRequirement">
+    <rdfs:label>Non-Functional Requirement</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#NonFunctionalRequirement">
+    <rdfs:comment>Requirements specifying how the system should perform</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#BootProcess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#BootProcess">
+    <rdfs:label>Boot Process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#BootProcess">
+    <rdfs:comment>The boot process entity</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#hasRequirement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#hasRequirement">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-requirements#Stakeholder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#hasRequirement">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-requirements#Requirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#hasRequirement">
+    <rdfs:label>has Requirement</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#satisfies">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#satisfies">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-requirements#BootProcess"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#satisfies">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-requirements#Requirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#satisfies">
+    <rdfs:label>satisfies</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#dependsOn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#dependsOn">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-requirements#Requirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#dependsOn">
+    <rdfs:range rdf:resource="http://example.org/arm-boot-requirements#Requirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#dependsOn">
+    <rdfs:label>depends On</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#description">
+    <rdfs:domain rdf:resource="http://example.org/arm-boot-requirements#Requirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#description">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#description">
+    <rdfs:label>description</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#RaspberryPiFoundation">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#Stakeholder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#RaspberryPiFoundation">
+    <rdfs:label>Raspberry Pi Foundation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#EndUsers">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#Stakeholder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#EndUsers">
+    <rdfs:label>End Users</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SoftwareDevelopers">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#Stakeholder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SoftwareDevelopers">
+    <rdfs:label>Software Developers</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#HardwareManufacturers">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#Stakeholder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#HardwareManufacturers">
+    <rdfs:label>Hardware Manufacturers</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#OpenSourceCommunity">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#Stakeholder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#OpenSourceCommunity">
+    <rdfs:label>Open-Source Community</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SecurityResearchers">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#Stakeholder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SecurityResearchers">
+    <rdfs:label>Security Researchers</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#LoadROM">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#FunctionalRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#LoadROM">
+    <description>The boot process must load the ROM code first</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#LoadBootcode">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#FunctionalRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#LoadBootcode">
+    <description>Must load bootcode.bin from boot media</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#LoadBootcode">
+    <dependsOn rdf:resource="http://example.org/arm-boot-requirements#LoadROM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ExecuteStartElf">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#FunctionalRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ExecuteStartElf">
+    <description>Must execute start.elf to initialize hardware</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ExecuteStartElf">
+    <dependsOn rdf:resource="http://example.org/arm-boot-requirements#LoadBootcode"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#LoadKernel">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#FunctionalRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#LoadKernel">
+    <description>Must load and execute the kernel</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#LoadKernel">
+    <dependsOn rdf:resource="http://example.org/arm-boot-requirements#ExecuteStartElf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SupportBootMedia">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#FunctionalRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SupportBootMedia">
+    <description>Support booting from SD card, USB, NVMe</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SupportArchitectures">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#FunctionalRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SupportArchitectures">
+    <description>Support ARM32 and ARM64 architectures</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#HandleConfigFiles">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#FunctionalRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#HandleConfigFiles">
+    <description>Handle configuration files like config.txt and cmdline.txt</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#MinimalBootTime">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#NonFunctionalRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#MinimalBootTime">
+    <description>Boot time should be minimal</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SecureBoot">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#NonFunctionalRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SecureBoot">
+    <description>Secure boot to prevent unauthorized code execution</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ReliableBoot">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#NonFunctionalRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ReliableBoot">
+    <description>Reliable across different Raspberry Pi models</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#OSCompatibility">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#NonFunctionalRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#OSCompatibility">
+    <description>Compatible with various operating systems</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#EnergyEfficient">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#NonFunctionalRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#EnergyEfficient">
+    <description>Energy efficient boot process</description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ARMNativeBootProcess">
+    <rdf:type rdf:resource="http://example.org/arm-boot-requirements#BootProcess"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ARMNativeBootProcess">
+    <satisfies rdf:resource="http://example.org/arm-boot-requirements#LoadROM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ARMNativeBootProcess">
+    <satisfies rdf:resource="http://example.org/arm-boot-requirements#LoadBootcode"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ARMNativeBootProcess">
+    <satisfies rdf:resource="http://example.org/arm-boot-requirements#ExecuteStartElf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ARMNativeBootProcess">
+    <satisfies rdf:resource="http://example.org/arm-boot-requirements#LoadKernel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ARMNativeBootProcess">
+    <satisfies rdf:resource="http://example.org/arm-boot-requirements#SupportBootMedia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ARMNativeBootProcess">
+    <satisfies rdf:resource="http://example.org/arm-boot-requirements#SupportArchitectures"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ARMNativeBootProcess">
+    <satisfies rdf:resource="http://example.org/arm-boot-requirements#HandleConfigFiles"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ARMNativeBootProcess">
+    <satisfies rdf:resource="http://example.org/arm-boot-requirements#MinimalBootTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ARMNativeBootProcess">
+    <satisfies rdf:resource="http://example.org/arm-boot-requirements#SecureBoot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ARMNativeBootProcess">
+    <satisfies rdf:resource="http://example.org/arm-boot-requirements#ReliableBoot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ARMNativeBootProcess">
+    <satisfies rdf:resource="http://example.org/arm-boot-requirements#OSCompatibility"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#ARMNativeBootProcess">
+    <satisfies rdf:resource="http://example.org/arm-boot-requirements#EnergyEfficient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#RaspberryPiFoundation">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#LoadROM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#RaspberryPiFoundation">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#LoadBootcode"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#RaspberryPiFoundation">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#ExecuteStartElf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#RaspberryPiFoundation">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#LoadKernel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#RaspberryPiFoundation">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#SupportBootMedia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#RaspberryPiFoundation">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#SupportArchitectures"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#RaspberryPiFoundation">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#HandleConfigFiles"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#RaspberryPiFoundation">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#MinimalBootTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#RaspberryPiFoundation">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#SecureBoot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#RaspberryPiFoundation">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#ReliableBoot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#EndUsers">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#MinimalBootTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#EndUsers">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#ReliableBoot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#EndUsers">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#OSCompatibility"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SoftwareDevelopers">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#SupportArchitectures"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SoftwareDevelopers">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#HandleConfigFiles"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SoftwareDevelopers">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#OSCompatibility"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#HardwareManufacturers">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#LoadROM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#HardwareManufacturers">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#SupportBootMedia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#OpenSourceCommunity">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#SecureBoot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#OpenSourceCommunity">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#EnergyEfficient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/arm-boot-requirements#SecurityResearchers">
+    <hasRequirement rdf:resource="http://example.org/arm-boot-requirements#SecureBoot"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,224 @@
+@prefix : <http://example.org/arm-boot-fsa#> .
+@prefix fsa: <http://example.org/arm-boot-fsa#> .
+@prefix infer: <http://example.org/arm-boot-inferences#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+
+# =============================================================================
+# ARM Boot FSA Inference Rules for EYE Reasoner
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Rule 1: Direct Reachability
+# If there's a transition from state A to state B, B is directly reachable from A
+# -----------------------------------------------------------------------------
+{ ?t a fsa:Transition ;
+     fsa:fromState ?from ;
+     fsa:toState ?to .
+} => {
+  ?to infer:directlyReachableFrom ?from .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 2: Failure State Detection
+# States with "Fail" or "NoBootMedia" or "Corrupt" in their description are failure states
+# -----------------------------------------------------------------------------
+{ ?s a fsa:State ;
+     fsa:description ?desc .
+  ?desc log:includes "Fail" .
+} => {
+  ?s a infer:FailureState .
+} .
+
+{ ?s a fsa:State ;
+     fsa:description ?desc .
+  ?desc log:includes "Corrupt" .
+} => {
+  ?s a infer:FailureState .
+} .
+
+{ ?s a fsa:State ;
+     fsa:description ?desc .
+  ?desc log:includes "No boot" .
+} => {
+  ?s a infer:FailureState .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 3: Success State Detection
+# States with "Success" in description are success states
+# -----------------------------------------------------------------------------
+{ ?s a fsa:State ;
+     fsa:description ?desc .
+  ?desc log:includes "Success" .
+} => {
+  ?s a infer:SuccessState .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 4: Initial State Detection
+# PowerOn is the initial state
+# -----------------------------------------------------------------------------
+{ fsa:PowerOn a fsa:State .
+} => {
+  fsa:PowerOn a infer:InitialState .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 5: Conditional Transitions
+# Transitions with conditions are conditional transitions
+# -----------------------------------------------------------------------------
+{ ?t a fsa:Transition ;
+     fsa:hasCondition ?c .
+} => {
+  ?t a infer:ConditionalTransition .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 6: Unconditional (Failure) Transitions
+# Transitions without conditions are typically failure paths
+# -----------------------------------------------------------------------------
+{ ?t a fsa:Transition ;
+     fsa:toState ?failState .
+  ?failState a infer:FailureState .
+} => {
+  ?t a infer:FailureTransition .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 7: Required Conditions for Success
+# Conditions on the success path are required for boot
+# -----------------------------------------------------------------------------
+{ ?t a fsa:Transition ;
+     fsa:hasCondition ?c ;
+     fsa:toState ?next .
+  ?next infer:onSuccessPath true .
+} => {
+  ?c a infer:RequiredCondition .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 8: Model-Specific Transitions (Secure Boot)
+# Transitions that apply to specific models
+# -----------------------------------------------------------------------------
+{ ?t a fsa:Transition ;
+     fsa:appliesToModel ?model .
+} => {
+  ?t a infer:ModelSpecificTransition .
+  ?model infer:hasSpecialTransition ?t .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 9: ARM64 Models
+# Models with Cortex-A53 or higher are ARM64
+# -----------------------------------------------------------------------------
+{ ?m a fsa:RaspberryPiModel ;
+     fsa:cpuArchitecture "Cortex-A53" .
+} => {
+  ?m a infer:ARM64Model .
+} .
+
+{ ?m a fsa:RaspberryPiModel ;
+     fsa:cpuArchitecture "Cortex-A72" .
+} => {
+  ?m a infer:ARM64Model .
+} .
+
+{ ?m a fsa:RaspberryPiModel ;
+     fsa:cpuArchitecture "Cortex-A76" .
+} => {
+  ?m a infer:ARM64Model .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 10: ARM32 Models
+# Models with ARM11 or Cortex-A7 are ARM32
+# -----------------------------------------------------------------------------
+{ ?m a fsa:RaspberryPiModel ;
+     fsa:cpuArchitecture "ARM11" .
+} => {
+  ?m a infer:ARM32Model .
+} .
+
+{ ?m a fsa:RaspberryPiModel ;
+     fsa:cpuArchitecture "Cortex-A7" .
+} => {
+  ?m a infer:ARM32Model .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 11: Secure Boot Capable Models
+# Pi4 and Pi5 support secure boot
+# -----------------------------------------------------------------------------
+{ ?t a fsa:Transition ;
+     fsa:appliesToModel fsa:Pi4 ;
+     fsa:toState fsa:SecureBootFail .
+} => {
+  fsa:Pi4 a infer:SecureBootCapable .
+} .
+
+{ ?t a fsa:Transition ;
+     fsa:appliesToModel fsa:Pi5 ;
+     fsa:toState fsa:SecureBootFail .
+} => {
+  fsa:Pi5 a infer:SecureBootCapable .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 12: State Predecessors
+# A state has a predecessor if there's a transition to it
+# -----------------------------------------------------------------------------
+{ ?t a fsa:Transition ;
+     fsa:fromState ?from ;
+     fsa:toState ?to .
+} => {
+  ?to infer:hasPredecessor ?from .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 13: State Successors
+# A state has a successor if there's a transition from it
+# -----------------------------------------------------------------------------
+{ ?t a fsa:Transition ;
+     fsa:fromState ?from ;
+     fsa:toState ?to .
+} => {
+  ?from infer:hasSuccessor ?to .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 14: Terminal States
+# States with no outgoing transitions are terminal
+# (This would need negation-as-failure, approximated by checking known terminals)
+# -----------------------------------------------------------------------------
+{ ?s a fsa:State .
+  fsa:BootFSA fsa:hasState ?s .
+} => {
+  ?s infer:inFSA fsa:BootFSA .
+} .
+
+# -----------------------------------------------------------------------------
+# Rule 15: Boot Stage Classification
+# Classify states by their role in boot process
+# -----------------------------------------------------------------------------
+{ ?s a fsa:State ;
+     fsa:description ?d .
+  ?d log:includes "Loading" .
+} => {
+  ?s a infer:LoadingStage .
+} .
+
+{ ?s a fsa:State ;
+     fsa:description ?d .
+  ?d log:includes "Execution" .
+} => {
+  ?s a infer:ExecutionStage .
+} .
+
+{ ?s a fsa:State ;
+     fsa:description ?d .
+  ?d log:includes "Executing" .
+} => {
+  ?s a infer:ExecutionStage .
+} .

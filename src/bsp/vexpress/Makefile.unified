@@ -1,0 +1,100 @@
+# Unified Makefile for ARM Versatile Express A15 Bootloader
+#
+# Uses common BSP infrastructure from ../common/
+# ARMv7-A 32-bit platform
+
+CROSS_COMPILE ?= arm-none-eabi-
+CC = $(CROSS_COMPILE)gcc
+AS = $(CROSS_COMPILE)as
+LD = $(CROSS_COMPILE)ld
+OBJCOPY = $(CROSS_COMPILE)objcopy
+
+# Common directory
+COMMON = ../common
+
+# Platform-specific defines
+RAM_BASE = 0x80000000
+
+# Compiler flags - ARMv7-A 32-bit with Virtualization Extensions (for HYP mode)
+CFLAGS = -Wall -Wextra -Os -ffreestanding -nostdlib -nostartfiles
+CFLAGS += -march=armv7ve -marm
+CFLAGS += -I$(COMMON) -I.
+CFLAGS += -DRAM_BASE=$(RAM_BASE)
+ASFLAGS = -march=armv7ve
+
+LDFLAGS = -T linker.ld
+
+# Output
+TARGET = bootloader-vexpress-unified.bin
+ELF = bootloader-vexpress-unified.elf
+
+# Sources - platform specific
+SRC_C_BSP = main_unified.c bsp_vexpress.c
+SRC_S_BSP = start.S
+
+# Sources - common (use ARM32 version)
+# Compile locally to avoid conflicts with ARM64 builds
+SRC_C_COMMON = $(COMMON)/boot_common.c $(COMMON)/shell.c $(COMMON)/env.c $(COMMON)/elf.c $(COMMON)/script.c $(COMMON)/net.c $(COMMON)/storage.c
+SRC_S_COMMON = $(COMMON)/kernel_boot_arm32.S
+
+# All sources
+SRC_C = $(SRC_C_BSP) $(SRC_C_COMMON)
+SRC_S = $(SRC_S_BSP) $(SRC_S_COMMON)
+
+# Objects - common files compiled locally to avoid ARM64 conflicts
+OBJ_C_BSP = $(SRC_C_BSP:.c=.o)
+OBJ_S_BSP = $(SRC_S_BSP:.S=.o)
+OBJ_C_COMMON = boot_common_arm32.o shell_arm32.o env_arm32.o elf_arm32.o script_arm32.o net_arm32.o storage_arm32.o
+OBJ_S_COMMON = kernel_boot_arm32.o
+OBJ = $(OBJ_C_BSP) $(OBJ_S_BSP) $(OBJ_C_COMMON) $(OBJ_S_COMMON)
+
+.PHONY: all clean qemu
+
+all: $(TARGET)
+
+$(TARGET): $(ELF)
+	$(OBJCOPY) -O binary $< $@
+	@echo "Built: $(TARGET) ($$(stat -f%z $(TARGET) 2>/dev/null || stat -c%s $(TARGET)) bytes)"
+	@echo "Architecture: ARMv7-A 32-bit (unified build)"
+
+$(ELF): $(OBJ) linker.ld
+	$(LD) $(LDFLAGS) -o $@ $(OBJ)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+%.o: %.S
+	$(AS) $(ASFLAGS) $< -o $@
+
+# Common object files - compiled locally with arm32 suffix
+boot_common_arm32.o: $(COMMON)/boot_common.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+shell_arm32.o: $(COMMON)/shell.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+env_arm32.o: $(COMMON)/env.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+elf_arm32.o: $(COMMON)/elf.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+script_arm32.o: $(COMMON)/script.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+net_arm32.o: $(COMMON)/net.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+storage_arm32.o: $(COMMON)/storage.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+kernel_boot_arm32.o: $(COMMON)/kernel_boot_arm32.S
+	$(AS) $(ASFLAGS) $< -o $@
+
+clean:
+	rm -f $(OBJ) $(ELF) $(TARGET) boot_common_arm32.o shell_arm32.o env_arm32.o elf_arm32.o script_arm32.o net_arm32.o storage_arm32.o kernel_boot_arm32.o
+	@echo "Cleaned build artifacts"
+
+qemu: $(ELF)
+	@echo "Running unified bootloader on QEMU vexpress-a15..."
+	qemu-system-arm -M vexpress-a15 -cpu cortex-a15 -m 1024M -kernel $(ELF) -nographic

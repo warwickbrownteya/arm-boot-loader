@@ -1,0 +1,76 @@
+@prefix : <http://example.org/arm-boot-unified-foundations#> .
+@prefix sbsa: <http://example.org/arm-boot-sbsa-verification#> .
+@prefix virt: <http://example.org/arm-boot-virt-verification#> .
+@prefix zynq: <http://example.org/arm-boot-zynq-verification#> .
+@prefix vexpress: <http://example.org/arm-boot-vexpress-verification#> .
+@prefix rpi: <http://example.org/arm-boot-rpi-verification#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+
+# =============================================================================
+# Verification Queries for ARM Boot FSA
+# =============================================================================
+
+# Query 1: Find all invariants that are verified
+{
+    ?invariant :verified true .
+} => {
+    ?invariant :status "VERIFIED_INVARIANT" .
+} .
+
+# Query 2: Find all deterministic FSAs
+{
+    ?fsa :deterministic true .
+} => {
+    ?fsa :fsaProperty "DETERMINISTIC" .
+} .
+
+# Query 3: Check termination property
+{
+    ?ordinal a :BootSequenceOrdinal .
+    ?ordinal :lessThan "epsilon_0" .
+} => {
+    ?ordinal :terminationGuaranteed true .
+} .
+
+# Query 4: Find verified BSP equivalences
+{
+    ?equiv a :UnivalentEquivalence .
+    ?equiv :equivalence ?rel .
+} => {
+    ?equiv :univalenceVerified true .
+} .
+
+# Query 5: Verify ADRP cardinality constraint
+{
+    ?constraint a :CardinalityConstraint .
+    ?constraint :satisfiesADRPConstraint true .
+} => {
+    ?constraint :adrpStatus "SATISFIED" .
+} .
+
+# Query 6: Find Hilbert consistency verifications
+{
+    ?consistency a :HilbertConsistency .
+    ?consistency :verified true .
+} => {
+    ?consistency :hilbertStatus "CONSISTENT" .
+} .
+
+# Query 7: Find Scott fixed points
+{
+    ?fp a :FixedPoint .
+    ?fp :denotation ?d .
+} => {
+    ?fp :scottVerified true .
+} .
+
+# Query 8: Find Curry-Howard witnesses
+{
+    ?witness a :CurryHowardWitness .
+    ?witness :proof ?p .
+} => {
+    ?witness :curryHowardVerified true .
+} .
