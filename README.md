@@ -1,3 +1,5 @@
+> **⚠️ ARCHIVED — migrated to [wbhardware/arm-boot-loader](https://github.com/wbhardware/arm-boot-loader).** This repository is read-only. See [ARCHIVED.md](ARCHIVED.md).
+
 # ARM64 Bootloader for Raspberry Pi
 
 A bare-metal ARM64 bootloader for Raspberry Pi devices with formal verification, comprehensive hardware abstraction, and support for models 1-5. This bootloader provides a complete Board Support Package (BSP) and boots Linux kernels without requiring U-Boot or RedBoot.
